@@ -13,7 +13,6 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -37,46 +36,45 @@ body {
     justify-content: space-between;
 }
 
-h2{
-    margin-bottom: 3rem;
+.box > h2{
+    margin-bottom: 48px;
     text-align: center;
     color: #e7e5e5;
 }
 
-button {
-    width: 14.3rem;
+.divButton > button > img{
+    width: 50px;
+    margin: 10px;
+}
+
+.divButton > button {
+    cursor: pointer;
+    width: 228px;
     height: 100px;
     border-radius: 15px;
     border-top: none;
     border-left: none;
     border-right: none;
-    cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    transition: border-bottom .2s;
+    font-size: 20px;
     background:#e7e5e5;
     display: flex;
     justify-content:center;
     align-items: center;
-}
-
-img{
-    width: 20%;
-    display: flex;
-    margin: 10px;
+    transition: border-bottom .2s;
 }
 
 .aluno:hover{
-    border-bottom: 0.6rem solid #630ba7;
+    border-bottom: 8px solid #630ba7;
     transition: border-bottom .2s;
 }
 
 .funcionario:hover{
-    border-bottom: 0.6rem solid #c62a88;
+    border-bottom: 8px solid #c62a88;
     transition: border-bottom .2s;
 }
 
-@media (max-width: 572px){
+@media (max-width: 800px){
 
     .box {
         border-radius: 0;
@@ -89,13 +87,14 @@ img{
         flex-direction: column;
     }
 
-    button {
+    .divButton > button {
         width: 100%;
-        margin: 0.6rem;
+        margin: 8px;
+        font-size: 22px;
     }
 
-    img{
-        width: 12%;
+    .divButton > img{
+        width: 60px;
     }
 
 }
