@@ -16,20 +16,48 @@
     <header> </header>
 
     <main class="container">
-        
+
         <div class="box">
-            
+
             <h2>Que tipo de usuário é você?</h2>
-            
+
             <div class='divButton'>
-                <button class="aluno">Aluno <img src="/img/exercise.svg" alt="aluno"> </button>
-                <button class="funcionario">Funcionário <img src="/img/employee.svg" alt="funcionario"></button>
+                <button class="aluno" onclick="Modal.open()">Aluno<img src="/img/exercise.svg" alt="aluno"> </button>
+                <button class="funcionario" onclick="Modal.open()">Funcionário<img src="/img/employee.svg"
+                        alt="funcionario"></button>
             </div>
 
         </div>
 
     </main>
 
+    <div class="modal-overlay">
+        <div class="modal">
+            <form action="" onsubmit="">
+
+                <h2>Login</h2>
+
+                <div class="divInputs">
+                    <input type="text" placeholder="Usuário">
+                </div>
+
+                <div class="divInputs">
+                    <input type="password" placeholder="Senha">
+                </div>
+
+                <div class="divButtons">
+                    <button href="#" class="bCancelar" onclick="Modal.close()"> Cancelar </button>
+                    <button class="bLogar">Logar</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
+
+<script src="/js/script.js"></script>
