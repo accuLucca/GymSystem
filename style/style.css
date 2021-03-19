@@ -69,6 +69,7 @@ button{
 .modal-erro.ativo{
     opacity: 1;
     visibility: visible;
+    transition: .3s;
 }
 
 .modal input{
