@@ -32,23 +32,26 @@
     </main>
 
     <div class="modal-overlay">
+
+        <div class="modal-erro">
+            <p>Preencha todos os campos!</p>
+        </div>
+
         <div class="modal">
 
             <h2>Login</h2>
+            <div class="divInputs">
+                <input id="inputUsuario" type="text" placeholder="Usuário">
+            </div>
 
             <div class="divInputs">
-                <input type="text" placeholder="Usuário">
+                <input id="inputSenha" type="password" placeholder="Senha">
             </div>
 
-            <div class="divInputs">
-                <input type="password" placeholder="Senha">
+            <div class="divButtonModal">
+                <button class="bCancelar" onclick="Modal.close()">Cancelar</button>
+                <button class="bLogar" onclick="Login.validarCampo()">Logar</button>
             </div>
-
-            <div class="divButtons">
-                <button href="#" class="bCancelar" onclick="Modal.close()"> Cancelar </button>
-                <button class="bLogar">Logar</button>
-            </div>
-
         </div>
     </div>
 
