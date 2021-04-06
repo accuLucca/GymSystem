@@ -1,0 +1,10 @@
+body{
+    position: fixed;
+}
+
+.sidebar{
+    margin-top: 0;
+    background-color: #1be400;
+    width: 10%;
+    height: 100%;
+}
