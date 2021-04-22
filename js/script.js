@@ -1,39 +1,84 @@
-const Modal = {
+const ModalAluno = {
     open() {
-        document.querySelector('.modal-overlay').classList.add('ativo')
+        document.querySelector('.modal-overlay-aluno').classList.add('ativo')
     },
+
     close() {
-        document.querySelector('.modal-overlay').classList.remove('ativo')
-        document.querySelector('.modal-erro').classList.remove('ativo')
-        Login.limparCampo()
+        document.querySelector('.modal-overlay-aluno').classList.remove('ativo')
+        document.querySelector('.modal-erro-aluno').classList.remove('ativo')
+        LoginAluno.limparCampo()
     }
 }
 
-const Login = {
-    usuario: document.getElementById('inputUsuario'),
-    senha: document.getElementById('inputSenha'),
+const ModalFuncionario = {
+    open() {
+        document.querySelector('.modal-overlay-funcionario').classList.add('ativo')
+    },
+    
+    close() {
+        document.querySelector('.modal-overlay-funcionario').classList.remove('ativo')
+        document.querySelector('.modal-erro-funcionario').classList.remove('ativo')
+        LoginFuncionario.limparCampo()
+    }
+}
+
+const LoginAluno = {
+    matricula: document.getElementById('inputMatricula'),
+    senha: document.getElementById('inputSenhaAluno'),
 
     getValues() {
         return {
-            usuario: Login.usuario.value,
-            senha: Login.senha.value
+            matricula: LoginAluno.matricula.value,
+            senha: LoginAluno.senha.value
         }
     },
 
     validarCampo() {
-        const { usuario, senha } = Login.getValues()
-        if (usuario.trim() === "" || senha.trim() === "") {
-            document.querySelector('.modal-erro').classList.add('ativo')
+        const { matricula, senha } = LoginAluno.getValues()
+        if (matricula.trim() === "" || senha.trim() === "") {
+            document.querySelector('.modal-erro-aluno').classList.add('ativo')
         }else{
             console.log("CAMPOS PREENCHIDOS")
         }
     },
 
     limparCampo() {
-        const { usuario, senha } = Login.getValues()
+        const { matricula, senha } = LoginAluno.getValues()
+        if (matricula.trim() !== "" || senha.trim() !== "") {
+            LoginAluno.matricula.value = ""
+            LoginAluno.senha.value = ""
+        }else{
+            console.log("CAMPOS VAZIOS")
+        }
+    }
+}
+
+
+const LoginFuncionario = {
+    usuario: document.getElementById('inputFuncionario'),
+    senha: document.getElementById('inputSenhaFuncionario'),
+
+    getValues() {
+        return {
+            usuario: LoginFuncionario.usuario.value,
+            senha: LoginFuncionario.senha.value
+        }
+    },
+
+    validarCampo() {
+        const { usuario, senha } = LoginFuncionario.getValues()
+        if (usuario.trim() === "" || senha.trim() === "") {
+            document.querySelector('.modal-erro-funcionario').classList.add('ativo')
+        }else{
+            console.log("CAMPOS PREENCHIDOS")
+        }
+    },
+
+    limparCampo() {
+        const { usuario, senha } = LoginFuncionario.getValues()
         if (usuario.trim() !== "" || senha.trim() !== "") {
-            Login.usuario.value = ""
-            Login.senha.value = ""
+            LoginFuncionario.usuario.value = ""
+            LoginFuncionario.senha.value = ""
         }else{
             console.log("CAMPOS VAZIOS")
         }

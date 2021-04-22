@@ -23,9 +23,9 @@
                 <h2>Que tipo de usuário é você?</h2>
 
                 <div class='divButton'>
-                    <button class="aluno" onclick="Modal.open()">Aluno<img src="./img/exercise.svg" alt="aluno">
+                    <button class="aluno" onclick="ModalAluno.open()">Aluno<img src="./img/exercise.svg" alt="aluno">
                     </button>
-                    <button class="funcionario" onclick="Modal.open()">Funcionário<img src="./img/employee.svg"
+                    <button class="funcionario" onclick="ModalFuncionario.open()">Funcionário<img src="./img/employee.svg"
                             alt="funcionario"></button>
                 </div>
 
@@ -34,9 +34,9 @@
 
     </main>
 
-    <div class="modal-overlay">
+    <div class="modal-overlay-aluno">
 
-        <div class="modal-erro">
+        <div class="modal-erro-aluno">
             <p>Preencha todos os campos!</p>
         </div>
 
@@ -44,16 +44,40 @@
 
             <h2>Login</h2>
             <div class="divInputs">
-                <input id="inputUsuario" type="text" placeholder="Usuário">
+                <input id="inputMatricula" type="text" placeholder="Matrícula">
             </div>
 
             <div class="divInputs">
-                <input id="inputSenha" type="password" placeholder="Senha">
+                <input id="inputSenhaAluno" type="password" placeholder="Senha">
             </div>
 
             <div class="divButtonModal">
-                <button class="bCancelar" onclick="Modal.close()">Cancelar</button>
-                <button class="bLogar" onclick="Login.validarCampo()">Logar</button>
+                <button class="bCancelar" onclick="ModalAluno.close()">Cancelar</button>
+                <button class="bLogar" onclick="LoginAluno.validarCampo()">Logar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay-funcionario">
+
+        <div class="modal-erro-funcionario">
+            <p>Preencha todos os campos!</p>
+        </div>
+
+        <div class="modal">
+
+            <h2>Login</h2>
+            <div class="divInputs">
+                <input id="inputFuncionario" type="text" placeholder="Usuário">
+            </div>
+
+            <div class="divInputs">
+                <input id="inputSenhaFuncionario" type="password" placeholder="Senha">
+            </div>
+
+            <div class="divButtonModal">
+                <button class="bCancelar" onclick="ModalFuncionario.close()">Cancelar</button>
+                <button class="bLogar" onclick="LoginFuncionario.validarCampo()">Logar</button>
             </div>
         </div>
     </div>
