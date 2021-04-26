@@ -15,16 +15,17 @@ body {
 }
 
 /* Header ========================== */
-header{
+header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 62px;
-    background-image: linear-gradient(40deg, #150485, #590995, #c62a88 );
+    background-image: linear-gradient(40deg, #150485, #590995, #c62a88);
 }
 
-.menu{
+.menu {
     width: 50px;
     height: 50px;
     background: none;
@@ -42,30 +43,31 @@ header{
 }
 
 /* Buttons ========================== */
-button{
+button {
     cursor: pointer;
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
 
 /* Sidebar ========================== */
-.sidebar{
+.sidebar {
     margin-top: 0;
     background-color: #e0e0e0;
-    width: 240px;
+    width: 110px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 .sidebar > button {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background: none;
-    width: 90%;
-    height: 60px;
+    width: 85%;
+    height: 125px;
     border: none;
     font-size: 16px;
     border-radius: 8px;
@@ -82,4 +84,41 @@ button{
     width: 35px;
     margin-right: 8px;
     margin-left: 10px;
+}
+
+/* 
+.sidebar.menor {
+    width: 85px;
+}
+
+.sidebar > button.menor {
+    font-size: 0;
+    height: 80px;
+    width: 80%;
+}
+
+.sidebar > button > img.menor {
+    width: 50px;
+}
+*/
+
+/* Responsividade ========================== */
+@media (max-width: 768px) {
+    .sidebar {
+        visibility: hidden;
+    }
+    .sidebar.ativo {
+        visibility: visible;
+        width: 100%;
+    }
+    .sidebar > button {
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: 110px;
+        font-size: 18px;
+    }
+    .sidebar > button > img {
+        width: 50px;
+    }
 }
