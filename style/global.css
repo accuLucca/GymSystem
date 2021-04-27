@@ -60,54 +60,50 @@ button {
     align-items: center;
 }
 
-.sidebar > button {
+.bSidebar {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     background: none;
-    width: 85%;
+    width: 87%;
     height: 125px;
     border: none;
-    font-size: 16px;
+    font-size: 17px;
     border-radius: 8px;
     margin-top: 10px;
     transition: background .2s;
 }
 
-.sidebar > button:hover {
+.bSidebar:hover {
     transition: background .2s;
     background: #c62a88b7;
 }
 
-.sidebar > button > img {
-    width: 35px;
-    margin-right: 8px;
-    margin-left: 10px;
+.imgSidebar {
+    width: 40px;
 }
 
-/* 
-.sidebar.menor {
+.sidebarMenor {
     width: 85px;
 }
 
-.sidebar > button.menor {
+.bSidebarMenor {
     font-size: 0;
     height: 80px;
     width: 80%;
 }
 
-.sidebar > button > img.menor {
+.imgSidebarMenor {
     width: 50px;
 }
-*/
 
 /* Responsividade ========================== */
 @media (max-width: 768px) {
     .sidebar {
         visibility: hidden;
     }
-    .sidebar.ativo {
+    .sidebarMobile {
         visibility: visible;
         width: 100%;
     }

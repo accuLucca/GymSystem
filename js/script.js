@@ -84,34 +84,26 @@ const LoginFuncionario = {
     }
 }
 
-function sideBar() {
-    var width = window.innerWidth;
-    if (width <= 768) { 
-        sideBarMobile()
-    } else if (width > 768) {
-    console.log("DISPOSITIVO COM RESOLUÇÃO MAIOR QUE 768px")
+const SideBar = {
+    
+    sideBar() {
+
+        var buttonsList = document.querySelectorAll('.bSidebar');
+        var imgList = document.querySelectorAll('.imgSidebar');
+
+        var width = window.innerWidth;
+        if (width <= 768) {
+            document.querySelector('.sidebar').classList.toggle('sidebarMobile');
+        } else if (width > 768) {
+            document.querySelector('.sidebar').classList.toggle('sidebarMenor');
+            buttonsList.forEach(button => {
+                button.classList.toggle('bSidebarMenor')
+            });
+            imgList.forEach(img => {
+                img.classList.toggle('imgSidebarMenor')
+            });
+        } else {
+            console.log("ERRO NA SIDEBAR");
+        }
     }
 }
-
-let fechado = Boolean;
-fechado = true;
-
-function sideBarMobile() {
-
-    if (fechado == true) {
-        document.querySelector('.sidebar').classList.add('ativo');
-        fechado = false;
-    } else if (fechado == false) {
-        document.querySelector('.sidebar').classList.remove('ativo');
-        fechado = true;
-    } else {
-        console.log("ERRO MENU MOBILE")
-    }
-}
-
-/* function ajustarSideBar() { 
-    document.querySelector('.sidebar').classList.add('menor')
-    document.querySelector('button').classList.add('menor')
-    document.querySelector('.sidebar button img').classList.add('menor')
-
-} SÓ ESTA PEGANDO O PRIMEIRO BOTAO DA SIDEBAR */ 
