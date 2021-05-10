@@ -6,7 +6,36 @@ const ModalAluno = {
     close() {
         document.querySelector('.modal-overlay-aluno').classList.remove('ativo')
         document.querySelector('.modal-erro-aluno').classList.remove('ativo')
-        LoginAluno.limparCampo()
+        ModalAluno.limparCampo()
+    },
+
+    matricula: document.getElementById('inputMatricula'),
+    senha: document.getElementById('inputSenhaAluno'),
+
+    getValues() {
+        return {
+            matricula: ModalAluno.matricula.value,
+            senha: ModalAluno.senha.value
+        }
+    },
+
+    validarCampo() {
+        const { matricula, senha } = ModalAluno.getValues()
+        if (matricula.trim() === "" || senha.trim() === "") {
+            document.querySelector('.modal-erro-aluno').classList.add('ativo')
+        } else {
+            console.log("CAMPOS PREENCHIDOS")
+        }
+    },
+
+    limparCampo() {
+        const { matricula, senha } = ModalAluno.getValues()
+        if (matricula.trim() !== "" || senha.trim() !== "") {
+            ModalAluno.matricula.value = ""
+            ModalAluno.senha.value = ""
+        } else {
+            console.log("CAMPOS VAZIOS")
+        }
     }
 }
 
@@ -18,54 +47,21 @@ const ModalFuncionario = {
     close() {
         document.querySelector('.modal-overlay-funcionario').classList.remove('ativo')
         document.querySelector('.modal-erro-funcionario').classList.remove('ativo')
-        LoginFuncionario.limparCampo()
-    }
-}
-
-const LoginAluno = {
-    matricula: document.getElementById('inputMatricula'),
-    senha: document.getElementById('inputSenhaAluno'),
-
-    getValues() {
-        return {
-            matricula: LoginAluno.matricula.value,
-            senha: LoginAluno.senha.value
-        }
+        ModalFuncionario.limparCampo()
     },
 
-    validarCampo() {
-        const { matricula, senha } = LoginAluno.getValues()
-        if (matricula.trim() === "" || senha.trim() === "") {
-            document.querySelector('.modal-erro-aluno').classList.add('ativo')
-        } else {
-            console.log("CAMPOS PREENCHIDOS")
-        }
-    },
-
-    limparCampo() {
-        const { matricula, senha } = LoginAluno.getValues()
-        if (matricula.trim() !== "" || senha.trim() !== "") {
-            LoginAluno.matricula.value = ""
-            LoginAluno.senha.value = ""
-        } else {
-            console.log("CAMPOS VAZIOS")
-        }
-    }
-}
-
-const LoginFuncionario = {
     usuario: document.getElementById('inputFuncionario'),
     senha: document.getElementById('inputSenhaFuncionario'),
 
     getValues() {
         return {
-            usuario: LoginFuncionario.usuario.value,
-            senha: LoginFuncionario.senha.value
+            usuario: ModalFuncionario.usuario.value,
+            senha: ModalFuncionario.senha.value
         }
     },
 
     validarCampo() {
-        const { usuario, senha } = LoginFuncionario.getValues()
+        const { usuario, senha } = ModalFuncionario.getValues()
         if (usuario.trim() === "" || senha.trim() === "") {
             document.querySelector('.modal-erro-funcionario').classList.add('ativo')
         } else {
@@ -74,14 +70,56 @@ const LoginFuncionario = {
     },
 
     limparCampo() {
-        const { usuario, senha } = LoginFuncionario.getValues()
+        const { usuario, senha } = ModalFuncionario.getValues()
         if (usuario.trim() !== "" || senha.trim() !== "") {
-            LoginFuncionario.usuario.value = ""
-            LoginFuncionario.senha.value = ""
+            ModalFuncionario.usuario.value = ""
+            ModalFuncionario.senha.value = ""
         } else {
             console.log("CAMPOS VAZIOS")
         }
     }
+}
+
+const ModalCadastroAluno = {
+    open() {
+        document.querySelector('.modal-overlay-criarAluno').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-criarAluno').classList.remove('ativo')
+        document.querySelector('.modal-overlay-criarAluno').classList.remove('ativo')
+        ModalCadastroAluno.limparCampo()
+    },
+
+    cpf: document.getElementById('CPF'),
+    nome: document.getElementById('Nome'),
+    nascimento: document.getElementById('nascimento'),
+    celular: document.getElementById('Celular'),
+    email: document.getElementById('email'),
+
+    getValues() {
+        return {
+            cpf : ModalCadastroAluno.cpf.value,
+            nome: ModalCadastroAluno.nome.value,
+            nascimento: ModalCadastroAluno.nascimento.value,
+            celular: ModalCadastroAluno.celular.value,
+            email: ModalCadastroAluno.email.value
+        }
+    },
+
+    limparCampo() {
+        const { cpf, nome, nascimento, celular, email } = ModalCadastroAluno.getValues()
+        if (cpf.trim() !== "" || nome.trim() !== "" || nascimento.trim() !== "" || celular.trim() !== "" || email.trim() !== "") {
+            ModalCadastroAluno.cpf.value = ""
+            ModalCadastroAluno.nome.value = ""
+            ModalCadastroAluno.nascimento.value = ""
+            ModalCadastroAluno.celular.value = ""
+            ModalCadastroAluno.email.value = ""
+        } else {
+            console.log("CAMPOS VAZIOS")
+        }
+    }
+
 }
 
 const SideBar = {
@@ -95,7 +133,7 @@ const SideBar = {
         if (width <= 768) {
             document.querySelector('.sidebar').classList.toggle('sidebarMobile');
         } else if (width > 768) {
-            document.querySelector('.sidebar').classList.toggle('sidebarMenor');
+            document.querySelector('.container').classList.toggle('containerMaior');
             buttonsList.forEach(button => {
                 button.classList.toggle('bSidebarMenor')
             });
@@ -106,4 +144,8 @@ const SideBar = {
             console.log("ERRO NA SIDEBAR");
         }
     }
+}
+
+function gerenciaAluno(){
+    document.querySelector(".content").innerHTML = "";
 }

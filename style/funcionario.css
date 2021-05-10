@@ -1,3 +1,133 @@
-body{
+/* Gerenciamento alunos ========================== */
+.gerenciaAluno{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color: #eeeeee;
+}
+
+.alunos{
+    width: 100%;
+}
+
+span{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.botoes img{
+    width: 40px;
+}
+
+.botoes{
+    border: none;
+    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+}
+
+.botoes:hover{
+    background: yellow;
+}
+
+.bCadastro{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.newAluno{
+    background: #49AA26;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+    height: 50px;
+    width: 85%;
+}
+
+.newAluno:hover{
+    background: #3dd705;
+}
+
+/* Modal ========================== */
+
+.modal-overlay-criarAluno{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay-criarAluno.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal{
+    width: 500px;
+    background: #f0f2f5;
+    padding: 40px;
+}
+.modal input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    width: 100%;
+    font-size: 17.5px;
+}
+
+.modal input:focus{
+    border-bottom: 2px solid #000000;
+}
+
+.erro{
+    border: 2px solid #ff0000;
+}
+
+.divInputs{
+    margin-top: 12px;
+}
+
+.divButtonModal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.divButtonModal > button{
+    width: 48%;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+}
+
+.bCancelar{
+    background: #e92929;
+    opacity: 0.6;
+}
+
+.bCancelar:hover{
+    opacity: 1;
+}
+
+.bCadastar{
+    background: #49AA26;
+}
+
+.bCadastar:hover{
+    background: #3dd705;
 }

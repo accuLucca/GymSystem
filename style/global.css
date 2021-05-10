@@ -9,11 +9,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-}
-
 /* Header ========================== */
 header {
     display: flex;
@@ -21,7 +16,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 62px;
+    grid-area: header;
     background-image: linear-gradient(40deg, #150485, #590995, #c62a88);
 }
 
@@ -44,8 +39,8 @@ header {
 
 /* Buttons ========================== */
 button {
+    background: none;
     cursor: pointer;
-    outline: none;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -53,9 +48,9 @@ button {
 .sidebar {
     margin-top: 0;
     background-color: #e0e0e0;
-    width: 110px;
     height: 100%;
     display: flex;
+    grid-area: sidebar;
     flex-direction: column;
     align-items: center;
 }
@@ -84,10 +79,6 @@ button {
     width: 40px;
 }
 
-.sidebarMenor {
-    width: 85px;
-}
-
 .bSidebarMenor {
     font-size: 0;
     height: 80px;
@@ -96,6 +87,32 @@ button {
 
 .imgSidebarMenor {
     width: 50px;
+}
+
+@media (min-width: 768.1px){
+    body{
+        display: grid;
+        grid-template-rows: 62px 80%;
+        grid-template-areas: 
+        'header header'
+        'conteudo conteudo'
+    }
+
+    .container{
+        width: 100vw;
+        height: calc(100vh - 62px);
+        grid-area: conteudo;
+        display: grid;
+        grid-template-columns: 110px auto;
+        grid-template-areas: "sidebar container";
+    }
+
+    .containerMaior{
+        grid-area: conteudo;
+        display: grid;
+        grid-template-columns: 85px auto;
+        grid-template-areas: "sidebar container";
+    }
 }
 
 /* Responsividade ========================== */

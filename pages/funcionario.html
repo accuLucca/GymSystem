@@ -17,17 +17,99 @@
 
 <body>
     <header>
-        <button class="menu" onclick="SideBar.sideBar()"> <i class="fas fa-bars"> </i></button>
+        <button class="menu" onclick="SideBar.sideBar()"><i class="fas fa-bars"></i></button>
     </header>
 
     <main class="container">
         <div class="sidebar">
             <button class="bSidebar"> <img class="imgSidebar" src="/img/ficha.svg"> Gerenciar treinos </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="/img/weight.svg"> Gerenciar avaliações físicas </button>
+            <button class="bSidebar"> <img class="imgSidebar" src="/img/weight.svg"> Gerenciar avaliações físicas
+            </button>
             <button class="bSidebar"> <img class="imgSidebar" src="/img/fluxo.svg"> Gerenciar fluxo de pessoas </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="/img/aluno.svg"> Gerenciar aluno  </button>
+            <button class="bSidebar" onclick="gerenciaAluno()"> <img class="imgSidebar" src="/img/aluno.svg"> Gerenciar aluno </button>
         </div>
+
+        <div class="content">
+            <div class="gerenciaAluno">
+
+                <h1>Gerenciamento de alunos</h1>
+
+                <div class="alunos">
+
+                    <table>
+                        <tr>
+                            <th width="3%">
+                                <h3> Matrícula </h3>
+                            </th>
+                            <th width="20%">
+                                <h3> Nome </h3>
+                            </th>
+                            <th width="10%">
+                                <h3> Celular </h3>
+                            </th>
+                            <th width="10%">
+                                <h3> Data Nascimento </h3>
+                            </th>
+                            <th width="1%"></th>
+                            <th width="1%"></th>
+                        </tr>
+                        <tr>
+                            <th> <span> 54651 </span> </th>
+                            <th> <span> Ricardo Gabriel Boslooper Fuzetti </span> </th>
+                            <th> <span> 99996-7816 </span> </th>
+                            <th> <span> 22/03/2000 </span> </th>
+                            <th> <button class="botoes"> <img src="/img/edit.svg" alt=""> </button> </th>
+                            <th> <button class="botoes"> <img src="/img/trash.svg" alt=""> </th>
+                        </tr>
+                    </table>
+
+                    <div class="bCadastro" onclick="ModalCadastroAluno.open()">
+                        <button class="newAluno"> Cadastrar aluno</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </main>
+
+
+    <form action="">
+        <div class="modal-overlay-criarAluno">
+
+            <div class="modal">
+
+                <h2>Cadastrar Aluno</h2>
+
+                <div class="divInputs">
+                    <input id="CPF" type="password" placeholder="CPF">
+                </div>
+
+                <div class="divInputs">
+                    <input id="Nome" type="text" placeholder="Nome">
+                </div>
+
+                <div class="divInputs">
+                    <input id="nascimento" type="password" placeholder="Data de Nascimento">
+                </div>
+
+                <div class="divInputs">
+                    <input id="Celular" type="password" placeholder="Celular">
+                </div>
+
+                <div class="divInputs">
+                    <input id="email" type="password" placeholder="E-mail">
+                </div>
+
+                <div class="divButtonModal">
+                    <button class="bCancelar" onclick="ModalCadastroAluno.close()">Cancelar</button>
+                    <button class="bCadastar" onclick="">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
 </body>
 
 </html>
