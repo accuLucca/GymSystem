@@ -15,7 +15,7 @@ CREATE TABLE Aluno (
     nome VARCHAR (100),
     telefone CHAR (9),
     email VARCHAR (50),
-    CPF CHAR (11),
+    cpf CHAR (11),
     nascimento DATE,
     ID_Agenda INT,
     FOREIGN KEY (ID_Agenda) REFERENCES Agenda(ID_Agenda)
