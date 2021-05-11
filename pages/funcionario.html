@@ -81,30 +81,30 @@
         <div class="modal">
 
             <h2>Cadastrar Aluno</h2>
-            <form action="../php/incluirAluno_exe.php" method="post" onsubmit="return check(this.form)">
+            <form action="../php/incluirAluno_exe.php" method="post">
                 <div class="divInputs">
-                    <input id="CPF" type="password" placeholder="CPF">
+                    <input id="CPF" type="password" placeholder="CPF" required>
                 </div>
 
                 <div class="divInputs">
-                    <input id="Nome" type="text" placeholder="Nome">
+                    <input id="Nome" type="text" placeholder="Nome" required>
                 </div>
 
                 <div class="divInputs">
-                    <input id="nascimento" type="password" placeholder="Data de Nascimento">
+                    <input id="nascimento" type="password" placeholder="Data de Nascimento" required>
                 </div>
 
                 <div class="divInputs">
-                    <input id="Celular" type="password" placeholder="Celular">
+                    <input id="Celular" type="password" placeholder="Celular" required>
                 </div>
 
                 <div class="divInputs">
-                    <input id="email" type="password" placeholder="E-mail">
+                    <input id="email" type="password" placeholder="E-mail" required>
                 </div>
 
                 <div class="divButtonModal">
-                    <button class="bCancelar" onclick="ModalCadastroAluno.close()">Cancelar</button>
-                    <button class="bCadastar" onclick="">Cadastrar</button>
+                    <button class="bCancelar" type="button" onclick="ModalCadastroAluno.close()">Cancelar</button>
+                    <button class="bCadastar" type="submit" onclick="">Cadastrar</button>
                 </div>
             </form>
         </div>
