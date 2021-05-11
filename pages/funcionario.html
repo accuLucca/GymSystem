@@ -83,7 +83,7 @@
             <h2>Cadastrar Aluno</h2>
             <form action="../php/incluirAluno_exe.php" method="post">
                 <div class="divInputs">
-                    <input id="CPF" type="text" placeholder="CPF" maxlength="11">
+                    <input id="CPF" type="text" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')">
                 </div>
 
                 <div class="divInputs">
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="divInputs">
-                    <input id="Celular" type="tel" placeholder="Celular" required>
+                    <input id="Celular" type="tel" placeholder="Celular" onkeypress="$(this).mask('(00) 00000-0000')" required>
                 </div>
 
                 <div class="divInputs">
@@ -116,3 +116,5 @@
 </html>
 
 <script src="../js/script.js"></script>
+<script src="../js/jquery-3.4.1.js"></script> 
+<script src="../js/jquery.mask.js"></script>

@@ -1,4 +1,5 @@
 <?php
+
 global $servername ;
 global $username;
 global $password;
@@ -8,4 +9,5 @@ $servername = "localhost:3307";
 $username = "root";
 $password = "";
 $database = "academia";
+
 ?>
