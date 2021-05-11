@@ -149,3 +149,5 @@ const SideBar = {
 function gerenciaAluno(){
     document.querySelector(".content").innerHTML = "";
 }
+
+console.log("TESTE")

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/global.css" link>
-    <link rel="stylesheet" href="/style/funcionario.css" link>
+    <link rel="stylesheet" href="../style/global.css" link>
+    <link rel="stylesheet" href="../style/funcionario.css" link>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
@@ -22,11 +22,12 @@
 
     <main class="container">
         <div class="sidebar">
-            <button class="bSidebar"> <img class="imgSidebar" src="/img/ficha.svg"> Gerenciar treinos </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="/img/weight.svg"> Gerenciar avaliações físicas
+            <button class="bSidebar"> <img class="imgSidebar" src="../img/ficha.svg"> Gerenciar treinos </button>
+            <button class="bSidebar"> <img class="imgSidebar" src="../img/weight.svg"> Gerenciar avaliações físicas
             </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="/img/fluxo.svg"> Gerenciar fluxo de pessoas </button>
-            <button class="bSidebar" onclick="gerenciaAluno()"> <img class="imgSidebar" src="/img/aluno.svg"> Gerenciar aluno </button>
+            <button class="bSidebar"> <img class="imgSidebar" src="../img/fluxo.svg"> Gerenciar fluxo de pessoas </button>
+            <button class="bSidebar" onclick="gerenciaAluno()"> <img class="imgSidebar" src="../img/aluno.svg"> Gerenciar
+                aluno </button>
         </div>
 
         <div class="content">
@@ -75,13 +76,12 @@
     </main>
 
 
-    <form action="">
-        <div class="modal-overlay-criarAluno">
+    <div class="modal-overlay-criarAluno">
 
-            <div class="modal">
+        <div class="modal">
 
-                <h2>Cadastrar Aluno</h2>
-
+            <h2>Cadastrar Aluno</h2>
+            <form action="../php/incluirAluno_exe.php" method="post" onsubmit="return check(this.form)">
                 <div class="divInputs">
                     <input id="CPF" type="password" placeholder="CPF">
                 </div>
@@ -106,12 +106,13 @@
                     <button class="bCancelar" onclick="ModalCadastroAluno.close()">Cancelar</button>
                     <button class="bCadastar" onclick="">Cadastrar</button>
                 </div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
+
 
 </body>
 
 </html>
 
-<script src="/js/script.js"></script>
+<script src="../js/script.js"></script>
