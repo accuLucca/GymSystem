@@ -9,7 +9,7 @@
     $email = $_POST['email'];
 
     // Cria conexão
-	$conn = mysqli_connect($servername, $username, $password, $database);
+	$con = mysqli_connect($servername, $username, $password, $database);
 
     // Verifica conexão
 	if (!$conn) {
