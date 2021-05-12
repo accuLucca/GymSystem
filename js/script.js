@@ -122,6 +122,17 @@ const ModalCadastroAluno = {
 
 }
 
+const ModalExcluirAluno = {
+    open() {
+        document.querySelector('.modal-overlay-excluir').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-excluir').classList.remove('ativo')
+        document.querySelector('.modal-overlay-excluir').classList.remove('ativo')
+    }
+}
+
 const SideBar = {
     
     sideBar() {
@@ -146,8 +157,78 @@ const SideBar = {
     }
 }
 
-function gerenciaAluno(){
-    document.querySelector(".content").innerHTML = "";
+function gerenciaTreino() {
+
+    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaTreino').classList.toggle('bSidebarClicked');
+    document.querySelector(".content").innerHTML = "<h1>GERENCIA TREINO EM CONSTRUÇAÕ</h1>";
 }
 
-console.log("TESTE")
+function gerenciaAval() {
+
+    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAval').classList.toggle('bSidebarClicked');
+    document.querySelector(".content").innerHTML = "<h1>GERENCIA AVALIAÇÃO EM CONSTRUÇAÕ</h1>";
+}
+
+function gerenciaFluxo() {
+
+    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaFluxo').classList.toggle('bSidebarClicked');
+    document.querySelector(".content").innerHTML = "<h1>GERENCIA FLUXO EM CONSTRUÇAÕ</h1>";
+}
+
+function gerenciaAluno(){
+
+    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
+    document.getElementById('gerenciaAluno').classList.toggle('bSidebarClicked');
+    
+    document.querySelector(".content").innerHTML = 
+    "<div class='gerenciaAluno'>" +
+
+        "<h1>Gerenciamento de alunos</h1>" +
+
+        "<div class='alunos'>" +
+
+            "<table>" +
+                "<tr>" +
+                    "<th width='3%'>" +
+                        "<h3> Matrícula </h3>" +
+                    "</th>" +
+                    "<th width='20%'>" +
+                        "<h3> Nome </h3>" +
+                    "</th>" +
+                    "<th width='10%'>" +
+                        "<h3> Celular </h3>" +
+                    "</th>" +
+                    "<th width='10%'>" +
+                        "<h3> Data Nascimento </h3>" +
+                    "</th>" +
+                    "<th width='1%'></th>" +
+                    "<th width='1%'></th>" +
+                "</tr>" +
+                "<tr class= 'border_bottom'>" +
+                    "<th> <span> 54651 </span> </th>" +
+                    "<th> <span> Fulano da Silva Sauro </span> </th>" +
+                    "<th> <span> 99999-9999 </span> </th>" +
+                    "<th> <span> 22/03/2000 </span> </th>" +
+                    "<th> <button class='botoes'> <img src='../img/edit.svg'> </button> </th>" +
+                    "<th> <button class='botoes' onclick='ModalExcluirAluno.open();'> <img src='../img/trash.svg' > </th>" +
+                "</tr>" +              
+            "</table>" +
+
+            "<div class='bCadastro' onclick='ModalCadastroAluno.open()'>" +
+                "<button class='newAluno'> Cadastrar aluno</button>" +
+            "</div>" +
+        "</div>" +
+    "</div>" 
+
+}

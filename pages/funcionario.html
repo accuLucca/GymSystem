@@ -22,56 +22,22 @@
 
     <main class="container">
         <div class="sidebar">
-            <button class="bSidebar"> <img class="imgSidebar" src="../img/ficha.svg"> Gerenciar treinos </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="../img/weight.svg"> Gerenciar avaliações físicas
+            <button class="bSidebar" id="gerenciaTreino" onclick="gerenciaTreino()"> <img class="imgSidebar"
+                    src="../img/ficha.svg"> Gerenciar treinos </button>
+            <button class="bSidebar" id="gerenciaAval" onclick="gerenciaAval()"> <img class="imgSidebar"
+                    src="../img/weight.svg"> Gerenciar avaliações físicas
             </button>
-            <button class="bSidebar"> <img class="imgSidebar" src="../img/fluxo.svg"> Gerenciar fluxo de pessoas </button>
-            <button class="bSidebar" onclick="gerenciaAluno()"> <img class="imgSidebar" src="../img/aluno.svg"> Gerenciar
+            <button class="bSidebar" id="gerenciaFluxo" onclick="gerenciaFluxo()"> <img class="imgSidebar"
+                    src="../img/fluxo.svg"> Gerenciar fluxo de pessoas </button>
+            <button class="bSidebar" id="gerenciaAluno" onclick="gerenciaAluno()"> <img class="imgSidebar"
+                    src="../img/aluno.svg"> Gerenciar
                 aluno </button>
         </div>
 
         <div class="content">
-            <div class="gerenciaAluno">
 
-                <h1>Gerenciamento de alunos</h1>
-
-                <div class="alunos">
-
-                    <table>
-                        <tr>
-                            <th width="3%">
-                                <h3> Matrícula </h3>
-                            </th>
-                            <th width="20%">
-                                <h3> Nome </h3>
-                            </th>
-                            <th width="10%">
-                                <h3> Celular </h3>
-                            </th>
-                            <th width="10%">
-                                <h3> Data Nascimento </h3>
-                            </th>
-                            <th width="1%"></th>
-                            <th width="1%"></th>
-                        </tr>
-                        <tr>
-                            <th> <span> 54651 </span> </th>
-                            <th> <span> Ricardo Gabriel Boslooper Fuzetti </span> </th>
-                            <th> <span> 99996-7816 </span> </th>
-                            <th> <span> 22/03/2000 </span> </th>
-                            <th> <button class="botoes"> <img src="/img/edit.svg" alt=""> </button> </th>
-                            <th> <button class="botoes"> <img src="/img/trash.svg" alt=""> </th>
-                        </tr>
-                    </table>
-
-                    <div class="bCadastro" onclick="ModalCadastroAluno.open()">
-                        <button class="newAluno"> Cadastrar aluno</button>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
+
 
     </main>
 
@@ -83,19 +49,20 @@
             <h2>Cadastrar Aluno</h2>
             <form action="../php/incluirAluno_exe.php" method="post">
                 <div class="divInputs">
-                    <input id="CPF" type="text" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')">
+                    <input id="CPF" type="text" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')" required>
                 </div>
 
                 <div class="divInputs">
                     <input id="Nome" type="text" placeholder="Nome" required>
                 </div>
-                
+
                 <div class="divInputs">
                     <input id="nascimento" type="date" placeholder="Data de Nascimento" required>
                 </div>
 
                 <div class="divInputs">
-                    <input id="Celular" type="tel" placeholder="Celular" onkeypress="$(this).mask('(00) 00000-0000')" required>
+                    <input id="Celular" type="tel" placeholder="Celular" onkeypress="$(this).mask('(00) 00000-0000')"
+                        required>
                 </div>
 
                 <div class="divInputs">
@@ -110,11 +77,26 @@
         </div>
     </div>
 
+    <div class="modal-overlay-excluir">
+
+        <div class="modal">
+
+            <h2>Tem certeza que deseja excluir o aluno?</h2>
+            <form action="../php/excluirAluno_exe.php" method="post">
+
+                <div class="divButtonModal">
+                    <button class="bCancelar" type="button" onclick="ModalExcluirAluno.close()">Cancelar</button>
+                    <button class="bCadastar" type="submit" onclick="">Excluir</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
 
 </body>
 
 </html>
 
 <script src="../js/script.js"></script>
-<script src="../js/jquery-3.4.1.js"></script> 
+<script src="../js/jquery-3.4.1.js"></script>
 <script src="../js/jquery.mask.js"></script>

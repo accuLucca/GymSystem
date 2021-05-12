@@ -4,14 +4,14 @@ USE academia;
 
 DROP TABLE IF EXISTS Agenda;
 CREATE TABLE Agenda (
-    ID_Agenda INT PRIMARY KEY,
+    ID_Agenda INT PRIMARY KEY AUTO_INCREMENT,
     Data DATE,
     Hora TIME
 );
 
 DROP TABLE IF EXISTS Aluno;
 CREATE TABLE Aluno (
-    matricula INT PRIMARY KEY,
+    matricula INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100),
     telefone CHAR (9),
     email VARCHAR (50),
@@ -23,7 +23,7 @@ CREATE TABLE Aluno (
 
 DROP TABLE IF EXISTS Professor;
 CREATE TABLE Professor (
-    ID_Professor INT PRIMARY KEY,
+    ID_Professor INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100), 
     cref INT,
     telefone CHAR (111)
@@ -31,7 +31,7 @@ CREATE TABLE Professor (
 
 DROP TABLE IF EXISTS Treino;
 CREATE TABLE Treino (
-    ID_Treino INT PRIMARY KEY,
+    ID_Treino INT PRIMARY KEY AUTO_INCREMENT,
     tipoTreino VARCHAR (100),
     ID_Professor INT,
     matricula INT,
@@ -41,7 +41,7 @@ CREATE TABLE Treino (
 
 DROP TABLE IF EXISTS Avaliacao_Fisica;
 CREATE TABLE Avaliacao_Fisica (
-    ID_Avaliacao INT PRIMARY KEY,
+    ID_Avaliacao INT PRIMARY KEY AUTO_INCREMENT,
     altura BOOLEAN,
     peso BOOLEAN,
     gordura BOOLEAN,
@@ -54,7 +54,7 @@ CREATE TABLE Avaliacao_Fisica (
 
 DROP TABLE IF EXISTS Exercicio;
 CREATE TABLE Exercicio (
-    ID_Exercicio INT PRIMARY KEY,
+    ID_Exercicio INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100),
     series INT,
     repeticoes INT,
@@ -63,7 +63,7 @@ CREATE TABLE Exercicio (
 
 DROP TABLE IF EXISTS Video_Exericio;
 CREATE TABLE Video_Exericio (
-    ID_Video INT PRIMARY KEY,
+    ID_Video INT PRIMARY KEY AUTO_INCREMENT,
     url VARCHAR (200),
     ID_Professor INT,
     ID_Exercicio INT,
