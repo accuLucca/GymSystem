@@ -87,7 +87,6 @@ const ModalCadastroAluno = {
 
     close() {
         document.querySelector('.modal-overlay-criarAluno').classList.remove('ativo')
-        document.querySelector('.modal-overlay-criarAluno').classList.remove('ativo')
         ModalCadastroAluno.limparCampo()
     },
 
@@ -129,9 +128,65 @@ const ModalExcluirAluno = {
 
     close() {
         document.querySelector('.modal-overlay-excluir').classList.remove('ativo')
-        document.querySelector('.modal-overlay-excluir').classList.remove('ativo')
     }
 }
+
+const ModalAtualizaAluno = {
+    open() {
+        document.querySelector('.modal-overlay-editarAluno').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-editarAluno').classList.remove('ativo')
+    }
+}
+
+const ModalCadastroProfessor = { 
+    open() {
+        document.querySelector('.modal-overlay-criarProfessor').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-criarProfessor').classList.remove('ativo')
+        ModalCadastroProfessor.limparCampo()
+    },
+
+    cref: document.getElementById('cref'),
+    nome: document.getElementById('nome'),
+    celular: document.getElementById('telefone'),
+
+    getValues() {
+        return {
+            cref : ModalCadastroProfessor.cref.value,
+            nome: ModalCadastroProfessor.nome.value,          
+            celular: ModalCadastroProfessor.telefone.value,
+        }
+    },
+
+    limparCampo() {
+        const { cref, nome, celular } = ModalCadastroProfessor.getValues()
+        if (cref.trim() !== "" || nome.trim() !== "" || celular.trim() !== "") {
+            ModalCadastroProfessor.cref.value = ""
+            ModalCadastroProfessor.telefone.value = ""
+            ModalCadastroProfessor.celular.value = ""
+        } else {
+            console.log("CAMPOS VAZIOS")
+        }
+    }
+
+}
+
+const ModalAtualizaProfessor = {
+    open() {
+        document.querySelector('.modal-overlay-editarProfessor').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-editarProfessor').classList.remove('ativo')
+    }
+}
+
+
 
 const SideBar = {
     
@@ -158,37 +213,17 @@ const SideBar = {
 }
 
 function gerenciaTreino() {
-
-    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaTreino').classList.toggle('bSidebarClicked');
     
 }
 
 function gerenciaAval() {
-
-    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAval').classList.toggle('bSidebarClicked');
     
 }
 
 function gerenciaFluxo() {
 
-    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAluno').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaFluxo').classList.toggle('bSidebarClicked');
-
 }
 
 function gerenciaAluno(){
-
-    document.getElementById('gerenciaTreino').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAval').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaFluxo').classList.remove('bSidebarClicked');
-    document.getElementById('gerenciaAluno').classList.toggle('bSidebarClicked');
     window.location.href = 'listarAlunos.php';
 }
