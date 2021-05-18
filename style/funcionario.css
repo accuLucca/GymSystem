@@ -52,6 +52,130 @@ span{
     background: #3dd705;
 }
 
+table{
+    border-collapse: collapse;
+}
+
+table tr:not(:first-child):hover{
+    background-color:#e0e0e0;
+}
+
+tr.border_bottom th:first-child {
+    border-radius: 2px;
+    border-left: 2.5px solid #590995;
+}
+
+.bSidebarClicked{
+    background-color:#c62a88b7;
+}
+
+/* Editar Aluno ========================== */
+
+.titulo{
+    background: #150485b9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.Editar{
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.048);
+    box-shadow: 0 0 1em #0000005b;
+}
+
+.divAtt{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.divAtt input{
+    padding-left: 10px;
+    font-size: 17.5px;
+    width: 99.4%;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.divAtt input:focus{
+    border-bottom: 2px solid #000000;
+}
+
+.divAttButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.divAttButton button{
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+    height: 70px;
+    width: 49%;
+}
+
+/* Excluir Aluno ========================== */
+
+.excluir{
+    width: 40%;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.048);
+    box-shadow: 0 0 1em #0000005b;
+}
+
+.divExc  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.divExc p {
+    padding-left: 10px;
+    font-size: 19px;
+}
+
+.divExcButton{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.divExcButton button{
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+    height: 50px;
+    margin-top: 10px;
+    width: 49%;
+}
+
+
+
+
+
+
+
 /* Modal Criar Aluno ========================== */
 
 .modal-overlay-criarAluno{
@@ -68,46 +192,6 @@ span{
 }
 
 .modal-overlay-criarAluno.ativo{
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Modal Excluir Aluno ========================== */
-
-.modal-overlay-excluir{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal-overlay-excluir.ativo{
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Modal Editar Aluno ========================== */
-
-.modal-overlay-editarAluno{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal-overlay-editarAluno.ativo{
     opacity: 1;
     visibility: visible;
 }
@@ -131,27 +215,6 @@ span{
     opacity: 1;
     visibility: visible;
 }
-
-/* Modal Cadastrar Professor ========================== */
-
-.modal-overlay-editarProfessor{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal-overlay-editarProfessor.ativo{
-    opacity: 1;
-    visibility: visible;
-}
-
 
 /* Modal ========================== */
 
@@ -217,21 +280,4 @@ span{
 
 .bCadastar:hover{
     background: #3dd705;
-}
-
-table{
-    border-collapse: collapse;
-}
-
-table tr:not(:first-child):hover{
-    background-color:#e0e0e0;
-}
-
-tr.border_bottom th:first-child {
-    border-radius: 2px;
-    border-left: 2.5px solid #590995;
-}
-
-.bSidebarClicked{
-    background-color:#c62a88b7;
 }

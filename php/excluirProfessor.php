@@ -21,10 +21,10 @@
     <main class="container">
         <div class="sidebar">
             <button class="bSidebar" id="gerenciaAluno" onclick="window.location.href='listarProfessores.php'"> <img class="imgSidebar" src="../img/aluno.svg"> Gerenciar
-                professor </button>
+                Professor </button>
         </div>
 
-        <div class="content">
+        <div>
             <div class="gerenciaAluno">
                 <?php
 
@@ -32,41 +32,33 @@
 
                 $ID_Professor = $_GET['ID_Professor'];
 
-                $sql = "SELECT ID_Professor, cref, nome, telefone FROM Professor WHERE ID_Professor = '$ID_Professor'";
+                $sql = "SELECT ID_Professor, cref, nome FROM Professor WHERE ID_Professor = '$ID_Professor'";
 
                 if ($result = mysqli_query($conn, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
                         // Apresenta cada linha da tabelas
                         while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                            <h1>Atualização Cadastral do Professor</h1>
+                            <h1>Exclusão do Professor</h1>
 
-                            <div class="Editar">
-                                <form action="../php/editarProfessor_exe.php" method="post">
-                                    <div class="titulo">
-                                        <h2> Professor: <?php echo $row['ID_Professor']; ?> - <?php echo $row['nome']; ?> </h2>
-                                    </div>
+                            <div class="excluir">
+                                <form action="../php/excluirProfessor_exe.php" method="post">
                                     <input type="hidden" id="ID_Professor" name="ID_Professor" value="<?php echo $row['ID_Professor']; ?>">
-                                    <div class="divAtt">
-                                        <h4>CREF</h4>
-                                        <input id="CPF" name="cref" type="text" placeholder="CPF" value="<?php echo $row['cref']; ?>" onkeypress="$(this).mask('000.000.000-00')" required>
+
+                                    <div class="divExc">
+                                        <h2> CREF: </h2>
+                                        <p> <?php echo $row['cref']; ?> </p>
+                                    </div>
+                                    <div class="divExc">
+                                        <h2> Nome: </h2>
+                                        <p> <?php echo $row['nome']; ?> </p>
                                     </div>
 
-                                    <div class="divAtt">
-                                        <h4>Nome</h4>
-                                        <input id="Nome" name="nome" type="text" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
+                                    <div class="divExcButton">
+                                        <button class="bCancelar" type="button" onclick="window.location.href='listarProfessores.php'"> Cancelar </button>
+                                        <button class="bCadastar" type="submit"> Excluir </button>
                                     </div>
 
-
-                                    <div class="divAtt">
-                                        <h4>Celular</h4>
-                                        <input id="Celular" name="telefone" type="tel" placeholder="Celular" value="<?php echo $row['telefone']; ?>" onkeypress="$(this).mask('00000-0000')" required>
-                                    </div>
-
-                                    <div class="divAttButton">
-                                        <button class="bCancelar" type="button" onclick="window.location.href='listarProfessores.php'">Cancelar</button>
-                                        <button class="bCadastar" type="submit" onclick="window.location.href='listarProfessores.php'">Alterar</button>
-                                    </div>
                                 </form>
                             </div>
 
@@ -74,7 +66,7 @@
                         }
                     }
                 } else {
-                    echo "Erro executando editarProfessor: " . mysqli_error($conn);
+                    echo "Erro executando excluirProfessor: " . mysqli_error($conn);
                 }
                 mysqli_close($conn); //Encerra conexao com o BD
                 ?>
