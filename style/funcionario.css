@@ -1,3 +1,17 @@
+.container2{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(40deg, #150485, #590995, #c62a88 );
+}
+
+.centro{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Gerenciamento alunos ========================== */
 .gerenciaAluno{
     width: 100%;
@@ -49,7 +63,7 @@ span{
 }
 
 .newAluno:hover{
-    background: #3dd705;
+    transition: background .2s;
 }
 
 table{
@@ -170,6 +184,27 @@ tr.border_bottom th:first-child {
     width: 49%;
 }
 
+/* Gerencia Treinos ========================== */
+
+.criarTreino{
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 45px;
+    transition: background .2s;
+    color: white;
+    background-color: #49AA26;
+}
+
+.criarTreino:hover{
+    background: #3dd705;
+    transition: background .2s;
+}
+
+.divInputs label{
+    font-weight: 400;
+}
 
 
 

@@ -121,26 +121,6 @@ const ModalCadastroAluno = {
 
 }
 
-const ModalExcluirAluno = {
-    open() {
-        document.querySelector('.modal-overlay-excluir').classList.add('ativo')
-    },
-
-    close() {
-        document.querySelector('.modal-overlay-excluir').classList.remove('ativo')
-    }
-}
-
-const ModalAtualizaAluno = {
-    open() {
-        document.querySelector('.modal-overlay-editarAluno').classList.add('ativo')
-    },
-
-    close() {
-        document.querySelector('.modal-overlay-editarAluno').classList.remove('ativo')
-    }
-}
-
 const ModalCadastroProfessor = { 
     open() {
         document.querySelector('.modal-overlay-criarProfessor').classList.add('ativo')
@@ -176,18 +156,6 @@ const ModalCadastroProfessor = {
 
 }
 
-const ModalAtualizaProfessor = {
-    open() {
-        document.querySelector('.modal-overlay-editarProfessor').classList.add('ativo')
-    },
-
-    close() {
-        document.querySelector('.modal-overlay-editarProfessor').classList.remove('ativo')
-    }
-}
-
-
-
 const SideBar = {
     
     sideBar() {
@@ -213,7 +181,7 @@ const SideBar = {
 }
 
 function gerenciaTreino() {
-    
+    window.location.href = 'gerenciaTreinos.php';
 }
 
 function gerenciaAval() {

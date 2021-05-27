@@ -55,10 +55,7 @@ CREATE TABLE Avaliacao_Fisica (
 DROP TABLE IF EXISTS Exercicio;
 CREATE TABLE Exercicio (
     ID_Exercicio INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR (100),
-    series INT,
-    repeticoes INT,
-    intervalo TIME
+    nome VARCHAR (100)
 );
 
 DROP TABLE IF EXISTS Video_Exericio;
