@@ -14,18 +14,11 @@
 </head>
 
 <body>
-    <header>
-        <button class="menu" onclick="SideBar.sideBar()"><i class="fas fa-bars"></i></button>
-    </header>
 
-    <main class="container">
-        <div class="sidebar">
-            <button class="bSidebar" id="gerenciaAluno" onclick="window.location.href='listarProfessores.php'"> <img class="imgSidebar" src="../img/aluno.svg"> Gerenciar
-                professor </button>
-        </div>
+    <main class="container2">
 
-        <div class="content">
-            <div class="gerenciaAluno">
+        <div class="centro">
+            <div class="modal">
                 <?php
 
                 require 'conectaBD.php';
@@ -39,36 +32,34 @@
                         // Apresenta cada linha da tabelas
                         while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                            <h1>Atualização Cadastral do Professor</h1>
+                            <h1>Atualização Cadastral</h1>
 
-                            <div class="Editar">
-                                <form action="../php/editarProfessor_exe.php" method="post">
-                                    <div class="titulo">
-                                        <h2> Professor: <?php echo $row['ID_Professor']; ?> - <?php echo $row['nome']; ?> </h2>
-                                    </div>
-                                    <input type="hidden" id="ID_Professor" name="ID_Professor" value="<?php echo $row['ID_Professor']; ?>">
-                                    <div class="divAtt">
-                                        <h4>CREF</h4>
-                                        <input id="CPF" name="cref" type="text" placeholder="CPF" value="<?php echo $row['cref']; ?>" onkeypress="$(this).mask('000.000.000-00')" required>
-                                    </div>
+                            <form action="../php/editarProfessor_exe.php" method="post">
+                                <div class="titulo">
+                                    <h3> Professor: <?php echo $row['ID_Professor']; ?> - <?php echo $row['nome']; ?> </h3>
+                                </div>
+                                <input type="hidden" id="ID_Professor" name="ID_Professor" value="<?php echo $row['ID_Professor']; ?>">
+                                <div class="divAtt">
+                                    <h4>CREF</h4>
+                                    <input id="CPF" name="cref" type="text" placeholder="CPF" value="<?php echo $row['cref']; ?>" onkeypress="$(this).mask('000.000.000-00')" required>
+                                </div>
 
-                                    <div class="divAtt">
-                                        <h4>Nome</h4>
-                                        <input id="Nome" name="nome" type="text" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
-                                    </div>
+                                <div class="divAtt">
+                                    <h4>Nome</h4>
+                                    <input id="Nome" name="nome" type="text" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
+                                </div>
 
 
-                                    <div class="divAtt">
-                                        <h4>Celular</h4>
-                                        <input id="Celular" name="telefone" type="tel" placeholder="Celular" value="<?php echo $row['telefone']; ?>" onkeypress="$(this).mask('00000-0000')" required>
-                                    </div>
+                                <div class="divAtt">
+                                    <h4>Celular</h4>
+                                    <input id="Celular" name="telefone" type="tel" placeholder="Celular" value="<?php echo $row['telefone']; ?>" onkeypress="$(this).mask('00000-0000')" required>
+                                </div>
 
-                                    <div class="divAttButton">
-                                        <button class="bCancelar" type="button" onclick="window.location.href='listarProfessores.php'">Cancelar</button>
-                                        <button class="bCadastar" type="submit" onclick="window.location.href='listarProfessores.php'">Alterar</button>
-                                    </div>
-                                </form>
-                            </div>
+                                <div class="divAttButton">
+                                    <button class="bCancelar" type="button" onclick="window.location.href='listarProfessores.php'">Cancelar</button>
+                                    <button class="bCadastar" type="submit" onclick="window.location.href='listarProfessores.php'">Alterar</button>
+                                </div>
+                            </form>
 
                 <?php
                         }
@@ -78,8 +69,9 @@
                 }
                 mysqli_close($conn); //Encerra conexao com o BD
                 ?>
-
             </div>
+
+
         </div>
 
 

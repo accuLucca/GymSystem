@@ -84,25 +84,6 @@ tr.border_bottom th:first-child {
 }
 
 /* Editar Aluno ========================== */
-
-.titulo{
-    background: #150485b9;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-}
-
-.Editar{
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.048);
-    box-shadow: 0 0 1em #0000005b;
-}
-
 .divAtt{
     padding-left: 10px;
     padding-top: 10px;
@@ -126,10 +107,7 @@ tr.border_bottom th:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    margin-top: 20px;
 }
 
 .divAttButton button{
@@ -138,17 +116,12 @@ tr.border_bottom th:first-child {
     color: #fff;
     font-size: 17.5px;
     height: 70px;
-    width: 49%;
+    width: 48%;
 }
 
 /* Excluir Aluno ========================== */
-
-.excluir{
-    width: 40%;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.048);
-    box-shadow: 0 0 1em #0000005b;
+.exc{
+    margin-top: 10px;
 }
 
 .divExc  {
@@ -168,10 +141,6 @@ tr.border_bottom th:first-child {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 15px;
 }
 
 .divExcButton button{
@@ -181,7 +150,7 @@ tr.border_bottom th:first-child {
     font-size: 17.5px;
     height: 50px;
     margin-top: 10px;
-    width: 49%;
+    width: 48%;
 }
 
 /* Gerencia Treinos ========================== */
@@ -255,9 +224,10 @@ tr.border_bottom th:first-child {
 
 .modal{
     width: 500px;
-    background: #f0f2f5;
+    background: #ebebeb;
     padding: 40px;
     border-radius: 10px;
+    box-shadow: 0 0 1em #0000008c;
 }
 
 .modal input{

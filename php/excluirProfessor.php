@@ -14,18 +14,11 @@
 </head>
 
 <body>
-    <header>
-        <button class="menu" onclick="SideBar.sideBar()"><i class="fas fa-bars"></i></button>
-    </header>
 
-    <main class="container">
-        <div class="sidebar">
-            <button class="bSidebar" id="gerenciaAluno" onclick="window.location.href='listarProfessores.php'"> <img class="imgSidebar" src="../img/aluno.svg"> Gerenciar
-                Professor </button>
-        </div>
+    <main class="container2">
 
-        <div>
-            <div class="gerenciaAluno">
+        <div class="centro">
+            <div class="modal">
                 <?php
 
                 require 'conectaBD.php';
@@ -46,11 +39,11 @@
                                     <input type="hidden" id="ID_Professor" name="ID_Professor" value="<?php echo $row['ID_Professor']; ?>">
 
                                     <div class="divExc">
-                                        <h2> CREF: </h2>
+                                        <h3> CREF: </h3>
                                         <p> <?php echo $row['cref']; ?> </p>
                                     </div>
                                     <div class="divExc">
-                                        <h2> Nome: </h2>
+                                        <h3> Nome: </h3>
                                         <p> <?php echo $row['nome']; ?> </p>
                                     </div>
 
