@@ -11,9 +11,9 @@
     $sql = "UPDATE Aluno SET cpf = '$cpf', nome = '$nome', nascimento = '$nascimento', telefone = '$telefone', email = '$email' WHERE matricula = $matricula";
 
     if ($result = mysqli_query($conn, $sql)) {
-        echo "Um registro alterado!";
+        header("Location: /GymSystem/php/listarAlunos.php");
     } else {
-        echo "Erro executando UPDATE: " . mysqli_error($conn);
+        echo "Erro executando UPDATE do aluno " . mysqli_error($conn);
     }
     mysqli_close($conn); //Encerra conexao com o BD
 

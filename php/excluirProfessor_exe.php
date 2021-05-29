@@ -8,9 +8,9 @@
 	$sql = "DELETE FROM Professor WHERE ID_Professor = $ID_Professor";
 
     if ($result = mysqli_query($conn, $sql)) {
-        echo "Um registro excluído!";
+        header("Location: /GymSystem/php/listarProfessores.php");
     } else {
-    echo "Erro executando DELETE: " . mysqli_error($conn);
+    echo "Erro executando DELETE do professor " . mysqli_error($conn);
     }
 
     mysqli_close($conn);  //Encerra conexao com o BD

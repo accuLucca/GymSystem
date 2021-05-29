@@ -98,7 +98,7 @@ const ModalCadastroAluno = {
 
     getValues() {
         return {
-            cpf : ModalCadastroAluno.cpf.value,
+            cpf: ModalCadastroAluno.cpf.value,
             nome: ModalCadastroAluno.nome.value,
             nascimento: ModalCadastroAluno.nascimento.value,
             celular: ModalCadastroAluno.celular.value,
@@ -121,7 +121,7 @@ const ModalCadastroAluno = {
 
 }
 
-const ModalCadastroProfessor = { 
+const ModalCadastroProfessor = {
     open() {
         document.querySelector('.modal-overlay-criarProfessor').classList.add('ativo')
     },
@@ -137,8 +137,8 @@ const ModalCadastroProfessor = {
 
     getValues() {
         return {
-            cref : ModalCadastroProfessor.cref.value,
-            nome: ModalCadastroProfessor.nome.value,          
+            cref: ModalCadastroProfessor.cref.value,
+            nome: ModalCadastroProfessor.nome.value,
             celular: ModalCadastroProfessor.telefone.value,
         }
     },
@@ -157,7 +157,7 @@ const ModalCadastroProfessor = {
 }
 
 const SideBar = {
-    
+
     sideBar() {
 
         var buttonsList = document.querySelectorAll('.bSidebar');
@@ -185,13 +185,13 @@ function gerenciaTreino() {
 }
 
 function gerenciaAval() {
-    
+
 }
 
 function gerenciaFluxo() {
 
 }
 
-function gerenciaAluno(){
+function gerenciaAluno() {
     window.location.href = 'listarAlunos.php';
 }

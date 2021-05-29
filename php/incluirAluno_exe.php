@@ -13,9 +13,9 @@
 	$sql = "INSERT INTO Aluno (cpf, nome, telefone, email, nascimento) VALUES ('$cpf','$nome','$celular','$email','$nascimento')";
 
     if ($result = mysqli_query($conn, $sql)) {
-        echo 'registro inserido';
+        header("Location: /GymSystem/php/listarAlunos.php");
     } else {
-        echo "Erro executando INSERT: " . mysqli_error($conn);
+        echo "Erro executando INSERT do aluno " . mysqli_error($conn);
     }
 
 	mysqli_close($conn);  //Encerra conexao com o BD

@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="./style/login.css" link>
+    <link rel="stylesheet" href="../style/login.css" link>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     <title> Login </title>
@@ -25,10 +25,10 @@
 
                 <div class='divButton'>
 
-                    <button class="aluno" onclick="ModalAluno.open()">Aluno<img src="./img/aluno.svg" alt="aluno">
+                    <button class="aluno" onclick="ModalAluno.open()">Aluno<img src="../img/aluno.svg" alt="aluno">
                     </button>
                     <button class="funcionario" onclick="ModalFuncionario.open()">Funcionário<img
-                            src="./img/employee.svg" alt="funcionario"></button>
+                            src="../img/employee.svg" alt="funcionario"></button>
                 </div>
 
             </div>
@@ -69,18 +69,20 @@
         <div class="modal">
 
             <h2>Login</h2>
+            <form action="logar.php" method="POST">
             <div class="divInputs">
-                <input id="inputFuncionario" type="text" placeholder="Usuário">
+                <input id="inputFuncionario" type="text" name="cref" placeholder="Usuário">
             </div>
 
             <div class="divInputs">
-                <input id="inputSenhaFuncionario" type="password" placeholder="Senha">
+                <input id="inputSenhaFuncionario" type="password" name="senha" placeholder="Senha">
             </div>
 
             <div class="divButtonModal">
-                <button class="bCancelar" onclick="ModalFuncionario.close()">Cancelar</button>
-                <button class="bLogar" onclick="ModalFuncionario.validarCampo()">Logar</button>
+                <button type="button" class="bCancelar" onclick="ModalFuncionario.close()">Cancelar</button>
+                <button type="submit" class="bLogar" onclick="ModalFuncionario.validarCampo()">Logar</button>
             </div>
+            </form>
         </div>
     </div>
 
@@ -89,4 +91,4 @@
 
 </html>
 
-<script src="./js/script.js"></script>
+<script src="../js/script.js"></script>

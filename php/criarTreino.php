@@ -44,7 +44,6 @@
 
                                 $matricula = $_GET['matricula'];
 
-                                $sql = "SELECT ID_Exercicio, nome FROM Exercicio";
                                 $sql2 = "SELECT matricula FROM Aluno WHERE matricula = '$matricula'";
 
                                 if ($result = mysqli_query($conn, $sql2)) {
@@ -52,19 +51,25 @@
                                         echo "<input type='hidden' id='matricula' name='matricula' value='" . $row['matricula'] . "'>";
                                     }
                                 }
-
-                                echo "<div class='divInputs'>";
-                                echo "<label>Selecione um exercicio </label>";
-                                echo "<select name='exercicio' id='exercicio'>";
-                                if ($result = mysqli_query($conn, $sql)) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<option value='" . $row['ID_Exercicio'] . "'>" . $row["nome"] . "</option>";
-                                    }
-                                    echo "</select required>";
-                                    echo "</div>";
-                                }
-
                                 ?>
+
+                                <div class='divInputs'>
+                                    <label>Selecione um exercicio </label>
+                                    <select name='exercicio' id='exercicio'>
+                                        <option value="1">Supino Reto</option>
+                                        <option value="2">Supino Inclinado</option>
+                                        <option value="3">Rosca Martelo</option>
+                                        <option value="4">Rosca Francesa</option>
+                                        <option value="5">Leg Press 45º</option>
+                                        <option value="6">Leg Press 90º</option>
+                                        <option value="7">Adutor</option>
+                                        <option value="8">Abdutor</option>
+                                        <option value="9">Cadeira Extensora</option>
+                                        <option value="9">Cadeira Flexora</option>
+                                        <option value="10">Abdominal Infra</option>
+                                        <option value="10">Abdominal Oblíquo</option>
+                                    </select required>
+                                </div>
 
                                 <div class="divInputs">
                                     <label>Selecione o número de séries</label>
@@ -105,6 +110,16 @@
                                         <option value="18">18</option>
                                         <option value="19">19</option>
                                         <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
                                     </select required>
                                 </div>
 

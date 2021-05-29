@@ -9,9 +9,9 @@
     $sql = "UPDATE Professor SET ID_Professor = '$ID_Professor', cref = '$cref', nome = '$nome', telefone = '$telefone' WHERE ID_Professor = $ID_Professor";
 
     if ($result = mysqli_query($conn, $sql)) {
-        echo "Um registro alterado!";
+        header("Location: /GymSystem/php/listarProfessores.php");
     } else {
-        echo "Erro executando UPDATE: " . mysqli_error($conn);
+        echo "Erro executando UPDATE do professor " . mysqli_error($conn);
     }
     mysqli_close($conn); //Encerra conexao com o BD
 

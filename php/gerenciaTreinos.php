@@ -51,6 +51,7 @@
                 echo "<th width='20%'> <h3> Nome </h3> </th>";
                 echo "<th width='1%'></th>";
                 echo "<th width='1%'></th>";
+                echo "<th width='1%'></th>";
                 echo "</tr>";
 
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -58,8 +59,9 @@
                     echo "<tr class= 'border_bottom'>";
                     echo "<th> <span>" . $cod . "</span> </th>";
                     echo "<th> <span>" . $row["nome"] . "</span> </th>";
-                    echo "<th> <form action='criarTreino.php?matricula=$cod' method='post'> <button class='criarTreino'> Criar trieno </button> </form> </th>";
-                    echo "<th> <form action='.php?matricula=$cod' method='post'> <button type='submit' class='botoes'> <img src='../img/trash.svg'> </button> </form> </th>";
+                    echo "<th> <form action='criarFicha.php?matricula=$cod' method='post'> <button class='criarFicha'> Criar ficha </button> </form> </th>";
+                    echo "<th> <form action='inserirExercicios.php?matricula=$cod' method='post'> <button class='inserirTreino'> Inserir exercícios </button> </form> </th>";
+                    echo "<th> <form action='visualizarTreino.php?matricula=$cod' method='post'> <button class='visualizarTreino'> Visualzar Treinos </button> </form> </th>";
                     echo "</tr>";
                 }
             }

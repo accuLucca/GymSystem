@@ -155,25 +155,162 @@ tr.border_bottom th:first-child {
 
 /* Gerencia Treinos ========================== */
 
-.criarTreino{
+.modalFicha{
+    width: 500px;
+    background: #ebebeb;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em #0000008c;
+}
+
+.criarFicha{
+    margin-top: 7px;
+    margin-bottom: 7px;
     font-size: 15px;
     border: none;
     border-radius: 10px;
-    width: 100px;
+    width: 150px;
     height: 45px;
-    transition: background .2s;
     color: white;
-    background-color: #49AA26;
+    background-color:#15048577;
+    box-shadow: inset 0 0 0 0 #150485;
+    transition: ease-out .2s;
 }
 
-.criarTreino:hover{
-    background: #3dd705;
-    transition: background .2s;
+.criarFicha:hover{
+    box-shadow: inset 150px 0 0 0 #150485;
+}
+
+.visualizarTreino{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    color: white;
+    background-color:#c62a8894;
+    box-shadow: inset 0 0 0 0 #c62a88;
+    transition: ease-out .2s;
+}
+
+.visualizarTreino:hover{
+    box-shadow: inset 150px 0 0 0 #c62a88;
+}
+
+.inserirTreino{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    color: white;
+    background-color:#58099573;
+    box-shadow: inset 0 0 0 0 #590995;
+    transition: ease-out .2s;
+}
+
+.inserirTreino:hover{
+    box-shadow: inset 150px 0 0 0 #590995;
+}
+
+.excluirFicha{
+    background-color:#15048577;
+    box-shadow: inset 0 0 0 0 #150485;
+    transition: ease-out .2s;
+}
+
+.excluirFicha:hover{
+    box-shadow: inset 200px 0 0 0 #150485;
+}
+
+.editarFicha{
+    background-color:#58099573;
+    box-shadow: inset 0 0 0 0 #590995;
+    transition: ease-out .2s;
+}
+
+.editarFicha:hover{
+    box-shadow: inset 200px 0 0 0 #590995;
 }
 
 .divInputs label{
     font-weight: 400;
 }
+
+.divButtonCancelar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.divButtonCancelar button{
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+}
+
+.conteudo{
+    width:95%;
+}
+
+.conteudo h1{
+    color: #fff;
+}
+
+.linha{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.divSelect{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.divSelect select{
+    padding: 4px;
+    border-radius: 10px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+#intervalo{
+    padding: 4px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.url{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    width: 100%;
+    font-size: 17.5px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.url:focus{
+    border-bottom: 2px solid #000000;
+}
+
+
 
 
 

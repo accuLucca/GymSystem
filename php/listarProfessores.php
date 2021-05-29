@@ -92,6 +92,10 @@
                     <input id="telefone" name="telefone" type="tel" placeholder="Celular" onkeypress="$(this).mask('00000-0000')" required>
                 </div>
 
+                <div class="divInputs">
+                    <input id="senha" name="senha" type="password" placeholder="Senha" required>
+                </div>
+
                 <div class="divButtonModal">
                     <button class="bCancelar" type="button" onclick="ModalCadastroProfessor.close()">Cancelar</button>
                     <button class="bCadastar" type="submit" onclick="">Cadastrar</button>
