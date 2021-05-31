@@ -156,6 +156,18 @@ const ModalCadastroProfessor = {
 
 }
 
+const ModalHorario = {
+    open() {
+        document.querySelector('.modal-overlay-horario').classList.add('ativo')
+    },
+
+    close() {
+        document.querySelector('.modal-overlay-horario').classList.remove('ativo')
+        document.querySelector('.modal-erro-funcionario').classList.remove('ativo')
+        ModalHorario.limparCampo()
+    }
+}
+
 const SideBar = {
 
     sideBar() {

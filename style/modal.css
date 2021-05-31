@@ -1,0 +1,133 @@
+/* Modal Criar Aluno ========================== */
+
+.modal-overlay-criarAluno{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay-criarAluno.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Cadastrar Professor ========================== */
+
+.modal-overlay-criarProfessor{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay-criarProfessor.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Marcar Horário ========================== */
+
+.modal-overlay-horario{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay-horario.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+/* Modal ========================== */
+
+.modal{
+    width: 500px;
+    background: #ebebeb;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em #0000008c;
+}
+
+.modal2{
+    width: 510px;
+    background: #ebebeb;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em #0000008c;
+}
+
+.modal input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    width: 100%;
+    font-size: 17.5px;
+}
+
+.modal input:focus{
+    border-bottom: 2px solid #000000;
+}
+
+.erro{
+    border: 2px solid #ff0000;
+}
+
+.divInputs{
+    margin-top: 12px;
+}
+
+.divButtonModal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.divButtonModal > button{
+    width: 48%;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17.5px;
+}
+
+.bCancelar{
+    background: #e92929;
+    opacity: 0.6;
+}
+
+.bCancelar:hover{
+    opacity: 1;
+}
+
+.bCadastar{
+    background: #49AA26;
+}
+
+.bCadastar:hover{
+    background: #3dd705;
+}
