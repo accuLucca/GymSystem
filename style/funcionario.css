@@ -224,7 +224,7 @@ tr.border_bottom th:first-child {
 }
 
 .excluirFicha:hover{
-    box-shadow: inset 200px 0 0 0 #150485;
+    box-shadow: inset 420px 0 0 0 #150485;
 }
 
 .editarFicha{
@@ -309,8 +309,6 @@ tr.border_bottom th:first-child {
 .url:focus{
     border-bottom: 2px solid #000000;
 }
-
-
 
 
 

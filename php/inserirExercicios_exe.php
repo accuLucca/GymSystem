@@ -13,17 +13,14 @@
 
     // Faz Select na Base de Dados
 	$sql = "INSERT INTO Exercicio (nome, series, repeticoes, intervalo, url, ID_Treino) VALUES ('$nome', '$series','$repeticoes','$intervalo', '$url', '$ID_Treino')";
-    $sql2 = "INSERT INTO Video_Exericio (url) VALUES ('$url')";
 
     if ($result = mysqli_query($conn, $sql)) {       
-        if ($result = mysqli_query($conn, $sql2)) {       
+             
             echo "<script language='JavaScript'>
-            alert('Treino inserido com sucesso!');
-            window.location = '/GymSystem/php/visualizarTreino.php?matricula=$matricula';
+            alert('Exercicio inserido com sucesso!');
+            window.location = '/GymSystem/php/inserirExercicios.php?matricula=$matricula';
             </script>";
-        } else {
-            echo "Erro executando INSERT do video: " . mysqli_error($conn);
-        }
+        
     } else {
         echo "Erro executando INSERT do treino: " . mysqli_error($conn);
     }

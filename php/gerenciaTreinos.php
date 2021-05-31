@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="../style/global.css" link>
     <link rel="stylesheet" href="../style/funcionario.css" link>
@@ -13,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-    <title>Área do Funcionário</title>
+    <title>Gerenciamento de Treinos</title>
 </head>
 
 <body>

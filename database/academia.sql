@@ -61,13 +61,3 @@ CREATE TABLE Exercicio (
     ID_Treino INT,
     FOREIGN KEY (ID_Treino) REFERENCES Treino (ID_Treino)
 );
-
-DROP TABLE IF EXISTS Video_Exericio;
-CREATE TABLE Video_Exericio (
-    ID_Video INT PRIMARY KEY AUTO_INCREMENT,
-    url VARCHAR (200),
-    ID_Professor INT,
-    ID_Exercicio INT,
-    FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor),
-    FOREIGN KEY (ID_Exercicio) REFERENCES Exercicio(ID_Exercicio)
-);

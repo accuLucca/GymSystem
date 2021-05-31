@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="../style/global.css" link>
     <link rel="stylesheet" href="../style/funcionario.css" link>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-    <title> Funcionário </title>
+    <title>Gerenciamento de Alunos</title>
+    
 </head>
 
 <body>
