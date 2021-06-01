@@ -48,23 +48,23 @@
                     echo '<div class="centro">';
                     echo '<h2>Ficha de Treino</h2>';
                     echo '</div>';
+                    echo '<table>';
+                    echo '<tr>';
+                    echo '<th width="20%"> Exercicio </th>';
+                    echo '<th width="10%"> Séries </th>';
+                    echo '<th width="10%"> Repetições </th>';
+                    echo '<th width="10%"> Intervalo </th>';
+                    echo '</tr>';
                     while ($row = mysqli_fetch_assoc($result)) {
                         $cod = $row["ID_Treino"];
-                        echo '<table>';
-                        echo '<tr>';
-                        echo '<th width="20%"> Exercicio </th>';
-                        echo '<th width="10%"> Séries </th>';
-                        echo '<th width="10%"> Repetições </th>';
-                        echo '<th width="10%"> Intervalo </th>';
-                        echo '</tr>';
                         echo '<tr>';
                         echo '<th width="20%">' . $row["nome"] . '</th>';
                         echo '<th width="10%">' . $row["series"] . 'x</th>';
                         echo '<th width="10%">' . $row["repeticoes"] . 'x</th>';
                         echo '<th width="20%">' . $row["intervalo"] . ' sec</th>';
                         echo '</tr>';
-                        echo '</table>';
                     }
+                    echo '</table>';
                 }
                 $undefined = isset($cod);
                 if ($undefined == false) {

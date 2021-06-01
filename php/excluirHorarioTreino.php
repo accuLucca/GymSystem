@@ -21,29 +21,56 @@
 
         <div class="centro">
             <div class="modal2">
+                <?php
 
-                <h1>Exclusão horário de treino</h1>
+                require 'conectaBD.php';
 
-                <div class="excluir">
-                    <form action="../php/.php" method="post">
-                        <input type="hidden" id="" name="" value=" ">
+                $id = $_GET['ID_Agenda'];
 
-                        <div class="divExc">
-                            <h3> Data: </h3>
-                            <p> </p>
-                        </div>
-                        <div class="divExc">
-                            <h3> Hora: </h3>
-                            <p> </p>
-                        </div>
+                $sql = "SELECT ID_Agenda, data, hora FROM Agenda WHERE ID_Agenda = '$id'";
 
-                        <div class="divExcButton">
-                            <button class="bCancelar" type="button" onclick="window.location.href='visualizarHorarioTreino.php'"> Cancelar </button>
-                            <button class="bCadastar" type="submit"> Excluir </button>
-                        </div>
+                if ($result = mysqli_query($conn, $sql)) {
+                    if (mysqli_num_rows($result) > 0) {
+                        // Apresenta cada linha da tabelas
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $data = explode('-', $row["data"]);
+                            $ano = $data[0];
+                            $mes = $data[1];
+                            $dia = $data[2];
+                            $nova_data = $dia . '/' . $mes . '/' . $ano;
+                ?>
 
-                    </form>
-                </div>
+                            <h1>Exclusão horário de treino</h1>
+
+                            <div class="excluir">
+                                <form action="../php/excluirHorarioTreino_exe.php" method="post">
+                                    <input type="hidden" id="ID_Agenda" name="ID_Agenda" value="<?php echo $row['ID_Agenda']; ?>">
+
+
+                                    <div class="divExc">
+                                        <h3> Data: </h3>
+                                        <p> <?php echo $nova_data; ?> </p>
+                                    </div>
+                                    <div class="divExc">
+                                        <h3> Hora: </h3>
+                                        <p> <?php echo $row['hora']; ?> </p>
+                                    </div>
+
+                                    <div class="divExcButton">
+                                        <button class="bCancelar" type="button" onclick="window.location.href='visualizarHorarioTreino.php'"> Cancelar </button>
+                                        <button class="bCadastar" type="submit"> Desmarcar </button>
+                                    </div>
+
+                                </form>
+                    <?php
+                        }
+                    }
+                } else {
+                    echo "Erro executando UPDATE: " . mysqli_error($conn);
+                }
+                mysqli_close($conn); //Encerra conexao com o BD
+                    ?>
+                            </div>
 
 
             </div>

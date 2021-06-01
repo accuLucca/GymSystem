@@ -39,7 +39,7 @@
                         require 'conectaBD.php';
 
                         // Faz Select na Base de Dados
-                        $sql = "SELECT data, hora FROM Agenda";
+                        $sql = "SELECT ID_Agenda, data, hora FROM Agenda";
                         if ($result = mysqli_query($conn, $sql)) {
 
                             echo '<tr>';
@@ -53,17 +53,17 @@
                             echo '</tr>';
 
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $id = $row['ID_Agenda'];
                                 $data = explode('-', $row["data"]);
                                 $ano = $data[0];
                                 $mes = $data[1];
                                 $dia = $data[2];
                                 $nova_data = $dia . '/' . $mes . '/' . $ano;
 
-
                                 echo '<tr class="border_bottom">';
                                 echo '<th> <span>' . $nova_data . '</span> </th>';
                                 echo '<th> <span>' . $row['hora'] . '</span> </th>';
-                                echo '<th> <form action=""> <button class="desmarcar"> Desmarcar </button> </form> </th>';
+                                echo "<th> <form action='excluirHorarioTreino.php?ID_Agenda=$id' method='post'> <button class='desmarcar'> Desmarcar </button> </form> </th>";
                                 echo '</tr>';
                             }
                         }
