@@ -2,10 +2,10 @@
 
 Project for creative experience discipline
 
-Collaborators :
+## Collaborators :
 
-Lucca Bulara Cavalcante Sampaio .
+- [Lucca Bulara Cavalcante Sampaio](https://github.com/accuLucca)
 
-Ricardo Gabriel Boslooper Fuzetti .
+- [Ricardo Gabriel Boslooper Fuzetti](https://github.com/RicardoFuzetti) 
 
-João Luís Valente Parrilha .
+- João Luís Valente Parrilha .
