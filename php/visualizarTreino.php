@@ -78,7 +78,7 @@
                     echo '</div>';
                     echo '</form>';
                 }
-
+                mysqli_close($conn);
                 ?>
 
                 <div class="divButtonCancelar">

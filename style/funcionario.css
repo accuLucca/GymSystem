@@ -99,22 +99,6 @@ tr.border_bottom th:first-child {
     border-bottom: 2px solid #000000;
 }
 
-.divAttButton{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.divAttButton button{
-    border: none;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 17.5px;
-    height: 70px;
-    width: 48%;
-}
-
 /* Excluir Aluno ========================== */
 .exc{
     margin-top: 10px;

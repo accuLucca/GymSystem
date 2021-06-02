@@ -37,7 +37,7 @@
                             <h1>Exclusão do aluno:</h1>
 
                             <form action="../php/excluirAluno_exe.php" method="post">
-                                <input type="hidden" id="matricula" name="" value="<?php echo $row['matricula']; ?>">
+                                <input type="hidden" id="matricula" name="matricula" value="<?php echo $row['matricula']; ?>">
 
                                 <div class="exc">
                                     <div class="divExc">

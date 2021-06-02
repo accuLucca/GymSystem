@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <title>Gerenciamento de Alunos</title>
-    
+
 </head>
 
 <body>
@@ -32,55 +32,61 @@
         </div>
 
         <div class="content">
-            <?php
+            <div class='gerenciaAluno'>
+                <h1>Gerenciamento de alunos</h1>
+                <div class='alunos'>
+                    <table>
+                        <?php
 
-            require 'conectaBD.php';
+                        require 'conectaBD.php';
 
-            // Faz Select na Base de Dados
-            $sql = "SELECT matricula, nome, telefone, nascimento FROM Aluno";
-            echo "<div class='gerenciaAluno'>";
-            echo "<h1>Gerenciamento de alunos</h1>";
-            echo "<div class='alunos'>";
-            echo "<table>";
+                        // Faz Select na Base de Dados
+                        $sql = "SELECT matricula, nome, telefone, nascimento FROM Aluno";
 
-            if ($result = mysqli_query($conn, $sql)) {
+                        if ($result = mysqli_query($conn, $sql)) {
+                            $total = mysqli_num_rows($result);
+                            if ($total === 0) {
+                                echo '<div class="centro">';
+                                echo '<h3>Não há alunos cadastrados</h3>';
+                                echo '</div>';
+                            } else {
+                                echo "<tr>";
+                                echo "<th width='3%'> <h3> Matrícula </h3> </th>";
+                                echo "<th width='20%'> <h3> Nome </h3> </th>";
+                                echo "<th width='10%'> <h3> Celular </h3> </th>";
+                                echo "<th width='10%'> <h3> Data Nascimento </h3> </th>";
+                                echo "<th width='1%'></th>";
+                                echo "<th width='1%'></th>";
+                                echo "</tr>";
 
-                echo "<tr>";
-                echo "<th width='3%'> <h3> Matrícula </h3> </th>";
-                echo "<th width='20%'> <h3> Nome </h3> </th>";
-                echo "<th width='10%'> <h3> Celular </h3> </th>";
-                echo "<th width='10%'> <h3> Data Nascimento </h3> </th>";
-                echo "<th width='1%'></th>";
-                echo "<th width='1%'></th>";
-                echo "</tr>";
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $dataN = explode('-', $row["nascimento"]);
+                                    $ano = $dataN[0];
+                                    $mes = $dataN[1];
+                                    $dia = $dataN[2];
+                                    $cod = $row["matricula"];
+                                    $nova_data = $dia . '/' . $mes . '/' . $ano;
+                                    echo "<tr class= 'border_bottom'>";
+                                    echo "<th> <span>" . $cod . "</span> </th>";
+                                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
+                                    echo "<th> <span>" . $row["telefone"] . "</span> </th>";
+                                    echo "<th> <span>" . $nova_data . "</span> </th>";
+                                    echo "<th> <form action='editarAluno.php?matricula=$cod' method='post'> <button type='submit' class='botoes'> <img src='../img/edit.svg'> </button> </form> </th>";
+                                    echo "<th> <form action='excluirAluno.php?matricula=$cod' method='post'> <button type='submit' class='botoes'> <img src='../img/trash.svg'> </button> </form> </th>";
+                                    echo "</tr>";
+                                }
+                            }
+                        }
 
-                while ($row = mysqli_fetch_assoc($result)) {               
-                    $dataN = explode('-', $row["nascimento"]);
-                    $ano = $dataN[0];
-                    $mes = $dataN[1];
-                    $dia = $dataN[2];
-                    $cod = $row["matricula"];
-                    $nova_data = $dia . '/' . $mes . '/' . $ano;
-                    echo "<tr class= 'border_bottom'>";
-                    echo "<th> <span>" . $cod . "</span> </th>";
-                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
-                    echo "<th> <span>" . $row["telefone"] . "</span> </th>";
-                    echo "<th> <span>" . $nova_data . "</span> </th>";
-                    echo "<th> <form action='editarAluno.php?matricula=$cod' method='post'> <button type='submit' class='botoes'> <img src='../img/edit.svg'> </button> </form> </th>";
-                    echo "<th> <form action='excluirAluno.php?matricula=$cod' method='post'> <button type='submit' class='botoes'> <img src='../img/trash.svg'> </button> </form> </th>";
-                    echo "</tr>";
-                }
-            }
-            echo "</table>";
-            echo "<div class='bCadastro'>";
-            echo "<button class='newAluno' onclick='ModalCadastroAluno.open()'>Cadastrar aluno</button>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-
-
-            mysqli_close($conn);
-            ?>
+                        mysqli_close($conn);
+                        ?>
+                        
+                    </table>
+                    <div class='bCadastro'>
+                        <button class='newAluno' onclick='ModalCadastroAluno.open()'>Cadastrar aluno</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
 

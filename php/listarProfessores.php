@@ -27,51 +27,58 @@
         </div>
 
         <div class="content">
-            <?php
 
-            require 'conectaBD.php';
+            <div class='gerenciaAluno'>
+                <h1>Gerenciamento de professores</h1>
+                <div class='alunos'>
+                    <table>
+                        <?php
 
-            // Faz Select na Base de Dados
-            $sql = "SELECT ID_Professor, nome, cref, telefone FROM Professor";
-            echo "<div class='gerenciaAluno'>";
-            echo "<h1>Gerenciamento de professores</h1>";
-            echo "<div class='alunos'>";
-            echo "<table>";
+                        require 'conectaBD.php';
 
-            if ($result = mysqli_query($conn, $sql)) {
+                        // Faz Select na Base de Dados
+                        $sql = "SELECT ID_Professor, nome, cref, telefone FROM Professor";
 
-                echo "<tr>";
-                echo "<th width='1%'> <h3> Código </h3> </th>";
-                echo "<th width='20%'> <h3> Nome </h3> </th>";
-                echo "<th width='10%'> <h3> CREF </h3> </th>";
-                echo "<th width='10%'> <h3> Telefone </h3> </th>";
-                echo "<th width='1%'></th>";
-                echo "<th width='1%'></th>";
-                echo "</tr>";
+                        if ($result = mysqli_query($conn, $sql)) {
+                            $total = mysqli_num_rows($result);
+                            if ($total === 0) {
+                                echo '<div class="centro">';
+                                echo '<h3>Não há professores contratados</h3>';
+                                echo '</div>';
+                            } else {
+                                echo "<tr>";
+                                echo "<th width='1%'> <h3> Código </h3> </th>";
+                                echo "<th width='20%'> <h3> Nome </h3> </th>";
+                                echo "<th width='10%'> <h3> CREF </h3> </th>";
+                                echo "<th width='10%'> <h3> Telefone </h3> </th>";
+                                echo "<th width='1%'></th>";
+                                echo "<th width='1%'></th>";
+                                echo "</tr>";
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row["ID_Professor"];
-                    echo "<tr class= 'border_bottom'>";
-                    echo "<th> <span>" . $row["ID_Professor"] . "</span> </th>";
-                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
-                    echo "<th> <span>" . $row["cref"] . "</span> </th>";
-                    echo "<th> <span>" . $row["telefone"] . "</span> </th>";
-                    echo "<th> <form action='editarProfessor.php?ID_Professor=$id' method='post'> <button type='submit' class='botoes'> <img src='../img/edit.svg'> </button> </form> </th>";
-                    echo "<th> <form action='excluirProfessor.php?ID_Professor=$id' method='post'> <button type='submit' class='botoes'> <img src='../img/trash.svg'> </button> </form> </th>";
-                    echo "</tr>";
-                }
-            }
-            echo "</table>";
-            echo "<div class='bCadastro'>";
-            echo "<button class='newAluno' onclick='ModalCadastroProfessor.open()'>Cadastrar professor</button>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $id = $row["ID_Professor"];
+                                    echo "<tr class= 'border_bottom'>";
+                                    echo "<th> <span>" . $row["ID_Professor"] . "</span> </th>";
+                                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
+                                    echo "<th> <span>" . $row["cref"] . "</span> </th>";
+                                    echo "<th> <span>" . $row["telefone"] . "</span> </th>";
+                                    echo "<th> <form action='editarProfessor.php?ID_Professor=$id' method='post'> <button type='submit' class='botoes'> <img src='../img/edit.svg'> </button> </form> </th>";
+                                    echo "<th> <form action='excluirProfessor.php?ID_Professor=$id' method='post'> <button type='submit' class='botoes'> <img src='../img/trash.svg'> </button> </form> </th>";
+                                    echo "</tr>";
+                                }
+                            }
+                        }
 
+                        mysqli_close($conn);
+                        ?>
+                    </table>
+                    <div class='bCadastro'>
+                        <button class='newAluno' onclick='ModalCadastroProfessor.open()'>Cadastrar professor</button>
+                    </div>
 
-            mysqli_close($conn);
-            ?>
+                </div>
 
+            </div>
         </div>
 
     </main>

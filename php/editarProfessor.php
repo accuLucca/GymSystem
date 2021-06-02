@@ -56,7 +56,7 @@
                                     <input id="Celular" name="telefone" type="tel" placeholder="Celular" value="<?php echo $row['telefone']; ?>" onkeypress="$(this).mask('00000-0000')" required>
                                 </div>
 
-                                <div class="divAttButton">
+                                <div class="divButtonModal">
                                     <button class="bCancelar" type="button" onclick="window.location.href='listarProfessores.php'">Cancelar</button>
                                     <button class="bCadastar" type="submit" onclick="window.location.href='listarProfessores.php'">Alterar</button>
                                 </div>
