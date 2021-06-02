@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.grafico{
+    width: 90%;
+}
+
 /* Listagem horário marcados ========================== */
 .alunos{
     width: 100%;

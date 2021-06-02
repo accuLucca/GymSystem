@@ -32,6 +32,7 @@
                 $sql = "SELECT matricula, nome FROM Aluno WHERE matricula = '$matricula'";
                 $sql2 = "SELECT ID_Treino FROM Treino WHERE matricula = '$matricula'";
 
+
                 if ($result = mysqli_query($conn, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
                         // Apresenta cada linha da tabelas
@@ -49,20 +50,33 @@
                                     </div>
 
                                     <?php
-                                    echo "<form action='../php/inserirExercicios_exe.php?matricula=$matricula' method='post'>";
-                                    ?>
-                                    <?php
 
+                                    echo "<form action='../php/inserirExercicios_exe.php?matricula=$matricula' method='post'>";
                                     echo "<div class='divSelect'>";
                                     echo "<label>Selecione uma ficha </label>";
                                     echo "<select name='ID_Treino' id='exercicio'>";
+
                                     if ($result = mysqli_query($conn, $sql2)) {
+
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<option value='" . $row['ID_Treino'] . "'>" . $row["ID_Treino"] . "</option>";
+                                            $idTreino = $row['ID_Treino'];
+                                        }
+
+                                        $undefined = isset($idTreino);
+                                        if ($undefined == false) {
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                            echo "<option> NENHUMA FICHA FOI CRIADA </option> ";
+                                        } else {
+                                            echo "<option value='" . $idTreino . "'>" . $idTreino . "</option>";
                                         }
                                         echo "</select required>";
                                         echo "</div>";
                                     }
+
                                     ?>
 
                                     <div id="exercicios">

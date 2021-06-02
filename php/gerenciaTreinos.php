@@ -33,46 +33,52 @@
 
         <div class="content">
 
-            <?php
+            <div class='gerenciaAluno'>
+                <h1>Gerenciamento de treinos</h1>
+                <div class='alunos'>
+                    <table>
+                        <?php
 
-            require 'conectaBD.php';
+                        require 'conectaBD.php';
 
-            // Faz Select na Base de Dados
-            $sql = "SELECT matricula, nome FROM Aluno";
-            echo "<div class='gerenciaAluno'>";
-            echo "<h1>Gerenciamento de treinos</h1>";
-            echo "<div class='alunos'>";
-            echo "<table>";
+                        // Faz Select na Base de Dados
+                        $sql = "SELECT matricula, nome FROM Aluno";
 
-            if ($result = mysqli_query($conn, $sql)) {
+                        if ($result = mysqli_query($conn, $sql)) {
+                            $total = mysqli_num_rows($result);
+                            if ($total === 0) {
+                                echo '<div class="centro">';
+                                echo '<h3>Não há alunos cadastrados</h3>';
+                                echo '</div>';
+                            } else {
+                                echo "<tr>";
+                                echo "<th width='3%'> <h3> Matrícula </h3> </th>";
+                                echo "<th width='20%'> <h3> Nome </h3> </th>";
+                                echo "<th width='1%'></th>";
+                                echo "<th width='1%'></th>";
+                                echo "<th width='1%'></th>";
+                                echo "</tr>";
 
-                echo "<tr>";
-                echo "<th width='3%'> <h3> Matrícula </h3> </th>";
-                echo "<th width='20%'> <h3> Nome </h3> </th>";
-                echo "<th width='1%'></th>";
-                echo "<th width='1%'></th>";
-                echo "<th width='1%'></th>";
-                echo "</tr>";
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $cod = $row["matricula"];
+                                    echo "<tr class= 'border_bottom'>";
+                                    echo "<th> <span>" . $cod . "</span> </th>";
+                                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
+                                    echo "<th> <form action='criarFicha.php?matricula=$cod' method='post'> <button class='criarFicha'> Criar ficha </button> </form> </th>";
+                                    echo "<th> <form action='inserirExercicios.php?matricula=$cod' method='post'> <button class='inserirTreino'> Inserir exercícios </button> </form> </th>";
+                                    echo "<th> <form action='visualizarTreino.php?matricula=$cod' method='post'> <button class='visualizarTreino'> Visualzar Treinos </button> </form> </th>";
+                                    echo "</tr>";
+                                }
+                            }
+                        }
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $cod = $row["matricula"];
-                    echo "<tr class= 'border_bottom'>";
-                    echo "<th> <span>" . $cod . "</span> </th>";
-                    echo "<th> <span>" . $row["nome"] . "</span> </th>";
-                    echo "<th> <form action='criarFicha.php?matricula=$cod' method='post'> <button class='criarFicha'> Criar ficha </button> </form> </th>";
-                    echo "<th> <form action='inserirExercicios.php?matricula=$cod' method='post'> <button class='inserirTreino'> Inserir exercícios </button> </form> </th>";
-                    echo "<th> <form action='visualizarTreino.php?matricula=$cod' method='post'> <button class='visualizarTreino'> Visualzar Treinos </button> </form> </th>";
-                    echo "</tr>";
-                }
-            }
-            echo "</table>";
-            echo "</div>";
-            echo "</div>";
+                        mysqli_close($conn);
 
+                        ?>
 
-            mysqli_close($conn);
-            ?>
-
+                    </table>
+                </div>
+            </div>
         </div>
 
     </main>

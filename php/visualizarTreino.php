@@ -35,9 +35,6 @@
                         echo '</div>';
                     }
                 }
-                ?>
-
-                <?php
 
                 $sql = "SELECT treino.ID_Treino, exercicio.nome, exercicio.series, exercicio.repeticoes, exercicio.intervalo FROM Treino as treino, Exercicio as exercicio WHERE matricula = '$matricula' AND Treino.ID_Treino = Exercicio.ID_Treino ORDER BY ID_Treino";
                 $sql2 = "SELECT ID_Treino FROM Treino WHERE matricula = '$matricula'";
