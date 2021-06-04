@@ -207,3 +207,11 @@ function gerenciaFluxo() {
 function gerenciaAluno() {
     window.location.href = 'listarAlunos.php';
 }
+
+function horaAvalFisica(){
+    window.location.href = 'visualizarHorarioAvalFisica.php';
+}
+
+function horaTreino(){
+    window.location.href = 'visualizarHorarioTreino.php';
+}

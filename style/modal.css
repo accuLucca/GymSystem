@@ -68,7 +68,15 @@
 }
 
 .modal2{
-    width: 510px;
+    width: 556px;
+    background: #ebebeb;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em #0000008c;
+}
+
+.modal3{
+    width: 729px;
     background: #ebebeb;
     padding: 40px;
     border-radius: 10px;

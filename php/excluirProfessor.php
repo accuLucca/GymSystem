@@ -59,8 +59,8 @@
                 <?php
                         }
                     }
-                } else {
-                    echo "Erro executando excluirProfessor: " . mysqli_error($conn);
+                } else  {
+                    echo "Erro executando SELECT: " . mysqli_error($conn);
                 }
                 mysqli_close($conn); //Encerra conexao com o BD
                 ?>

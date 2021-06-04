@@ -20,14 +20,14 @@
     <main class="container2">
 
         <div class="centro">
-            <div class="modal2">
+            <div class="modal3">
                 <?php
 
                 require 'conectaBD.php';
 
-                $id = $_GET['ID_Agenda'];
+                $id = $_GET['ID_Avaliacao'];
 
-                $sql = "SELECT ID_Agenda, data, hora FROM Agenda WHERE ID_Agenda = '$id'";
+                $sql = "SELECT ID_Avaliacao, data, hora FROM Avaliacao_Fisica WHERE ID_Avaliacao = '$id'";
 
                 if ($result = mysqli_query($conn, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
@@ -40,11 +40,11 @@
                             $nova_data = $dia . '/' . $mes . '/' . $ano;
                 ?>
 
-                            <h1>Exclusão do horário de treino</h1>
+                            <h1>Exclusão do horário de Avaliação Física</h1>
 
                             <div class="excluir">
-                                <form action="../php/excluirHorarioTreino_exe.php" method="post">
-                                    <input type="hidden" id="ID_Agenda" name="ID_Agenda" value="<?php echo $row['ID_Agenda']; ?>">
+                                <form action="../php/excluirHorarioAvalFisica_exe.php" method="post">
+                                    <input type="hidden" id="ID_Avaliacao" name="ID_Avaliacao" value="<?php echo $row['ID_Avaliacao']; ?>">
 
 
                                     <div class="divExc">
@@ -57,7 +57,7 @@
                                     </div>
 
                                     <div class="divExcButton">
-                                        <button class="bCancelar" type="button" onclick="window.location.href='visualizarHorarioTreino.php'"> Cancelar </button>
+                                        <button class="bCancelar" type="button" onclick="window.location.href='visualizarHorarioAvalFisica.php'"> Cancelar </button>
                                         <button class="bCadastar" type="submit"> Desmarcar </button>
                                     </div>
 
@@ -65,8 +65,8 @@
                     <?php
                         }
                     }
-                } else  {
-                    echo "Erro executando SELECT: " . mysqli_error($conn);
+                } else {
+                    echo "Erro executando DELETE: " . mysqli_error($conn);
                 }
                 mysqli_close($conn); //Encerra conexao com o BD
                     ?>

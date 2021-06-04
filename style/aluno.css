@@ -77,6 +77,24 @@ tr.border_bottom th:first-child {
     border-left: 2.5px solid #590995;
 }
 
+.visualizar{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    color: white;
+    background-color:#15048577;
+    box-shadow: inset 0 0 0 0 #150485;
+    transition: ease-out .2s;
+}
+
+.visualizar:hover{
+    box-shadow: inset 150px 0 0 0 #150485;
+}
+
 .desmarcar{
     margin-top: 7px;
     margin-bottom: 7px;

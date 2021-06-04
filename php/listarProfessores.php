@@ -67,6 +67,8 @@
                                     echo "</tr>";
                                 }
                             }
+                        } else  {
+                            echo "Erro executando SELECT: " . mysqli_error($conn);
                         }
 
                         mysqli_close($conn);
