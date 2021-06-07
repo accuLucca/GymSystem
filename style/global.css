@@ -21,8 +21,9 @@ header {
 }
 
 .logo img{
-    width: 56%;
-    float: right;   
+    width: 55%;
+    float: right;
+    position: relative;
 }
 
 .menu {
