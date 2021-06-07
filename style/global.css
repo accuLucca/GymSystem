@@ -23,8 +23,6 @@ header {
 /* tem um bug por aqui que faz a logo sair da tela */
 .logo img{
     width: 55%;
-    float: right;
-    position: relative;
 }
 
 .menu {

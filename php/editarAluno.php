@@ -19,7 +19,6 @@
 
     <main class="container2">
 
-
         <div class="centro">
             <div class="modal">
                 <?php
