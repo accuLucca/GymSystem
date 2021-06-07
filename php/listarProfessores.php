@@ -19,7 +19,7 @@
     <header>
         <button class="menu" onclick="SideBar.sideBar()"><i class="fas fa-bars"></i></button>
         <div class="logo">
-            <img src="/img/logo.png" alt="GymSystem">
+            <img src="../img/logo.png" alt="GymSystem">
         </div>
     </header>
 
