@@ -9,9 +9,9 @@ $('document').ready(function () {
             var horaMarcada = [];
 
             for (var i in data) {
-                horaMarcada.push(data[i].horaMarcada);
-                console.info(data[i].horaMarcada);
+                horaMarcada.push(data[i].hora);
             }
+            console.log(horaMarcada);
             grafico(horaMarcada);
         }
     });

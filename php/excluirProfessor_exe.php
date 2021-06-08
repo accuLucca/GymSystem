@@ -8,7 +8,10 @@
 	$sql = "DELETE FROM Professor WHERE ID_Professor = $ID_Professor";
 
     if ($result = mysqli_query($conn, $sql)) {
-        header("Location: /GymSystem/php/listarProfessores.php");
+        echo "<script language='JavaScript'>
+        alert('Professor excluido com sucesso!');
+        window.location = '/GymSystem/php/listarProfessores.php';
+        </script>";
     } else {
     echo "Erro executando DELETE do professor " . mysqli_error($conn);
     }

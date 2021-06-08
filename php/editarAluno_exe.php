@@ -11,7 +11,10 @@
     $sql = "UPDATE Aluno SET cpf = '$cpf', nome = '$nome', nascimento = '$nascimento', telefone = '$telefone', email = '$email' WHERE matricula = $matricula";
 
     if ($result = mysqli_query($conn, $sql)) {
-        header("Location: /GymSystem/php/listarAlunos.php");
+        echo "<script language='JavaScript'>
+        alert('Aluno editado com sucesso!');
+        window.location = '/GymSystem/php/listarAlunos.php';
+        </script>";
     } else {
         echo "Erro executando UPDATE do aluno " . mysqli_error($conn);
     }

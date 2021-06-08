@@ -2,7 +2,7 @@
 
         $pdo = new PDO('mysql:host=localhost;dbname=academia;port=3307;chartset=utf8', 'Ricardo', '1234@puc');
 
-        $sql = "SELECT count(agenda.hora) FROM Agenda WHERE agenda.hora = agenda.hora GROUP BY agenda.hora";
+        $sql = "SELECT hora FROM Agenda";
 
         $statement = $pdo->prepare($sql);
 

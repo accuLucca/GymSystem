@@ -79,6 +79,11 @@ tr.border_bottom th:first-child {
     border-left: 2.5px solid #590995;
 }
 
+.nada{
+   color: red;
+   font-weight: normal;
+}
+
 /* Editar Aluno ========================== */
 .divAtt{
     padding-left: 10px;
@@ -136,7 +141,7 @@ tr.border_bottom th:first-child {
 /* Gerencia Treinos ========================== */
 
 .modalFicha{
-    width: 500px;
+    width: 520px;
     background: #ebebeb;
     padding: 40px;
     border-radius: 10px;
@@ -204,7 +209,7 @@ tr.border_bottom th:first-child {
 }
 
 .excluirFicha:hover{
-    box-shadow: inset 420px 0 0 0 #150485;
+    box-shadow: inset 440px 0 0 0 #150485;
 }
 
 .editarFicha{

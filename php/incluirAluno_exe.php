@@ -13,7 +13,10 @@
 	$sql = "INSERT INTO Aluno (cpf, nome, telefone, email, nascimento) VALUES ('$cpf','$nome','$celular','$email','$nascimento')";
 
     if ($result = mysqli_query($conn, $sql)) {
-        header("Location: /GymSystem/php/listarAlunos.php");
+        echo "<script language='JavaScript'>
+        alert('Aluno cadastrado com sucesso!');
+        window.location = '/GymSystem/php/listarAlunos.php';
+        </script>";
     } else {
         echo "Erro executando INSERT do aluno " . mysqli_error($conn);
     }

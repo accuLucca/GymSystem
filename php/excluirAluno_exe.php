@@ -10,7 +10,10 @@
 
     if ($result = mysqli_query($conn, $sql2)) {
         if ($result = mysqli_query($conn, $sql)) {
-            header("Location: /GymSystem/php/listarAlunos.php");
+            echo "<script language='JavaScript'>
+            alert('Aluno excluido com sucesso!');
+            window.location = '/GymSystem/php/listarAlunos.php';
+            </script>";
         } else {
             echo "Erro executando DELETE do treino " . mysqli_error($conn);
         }

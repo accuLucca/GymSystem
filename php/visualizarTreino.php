@@ -36,7 +36,7 @@
                     }
                 }
 
-                $sql = "SELECT treino.ID_Treino, exercicio.nome, exercicio.series, exercicio.repeticoes, exercicio.intervalo FROM Treino as treino, Exercicio as exercicio WHERE matricula = '$matricula' AND Treino.ID_Treino = Exercicio.ID_Treino ORDER BY ID_Treino";
+                $sql = "SELECT treino.ID_Treino, exercicio.nome, exercicio.series, exercicio.repeticoes, exercicio.intervalo, exercicio.url FROM Treino as treino, Exercicio as exercicio WHERE matricula = '$matricula' AND Treino.ID_Treino = Exercicio.ID_Treino ORDER BY ID_Treino";
                 $sql2 = "SELECT ID_Treino FROM Treino WHERE matricula = '$matricula'";
 
                 if ($result = mysqli_query($conn, $sql)) {
@@ -51,14 +51,22 @@
                     echo '<th width="10%"> Séries </th>';
                     echo '<th width="10%"> Repetições </th>';
                     echo '<th width="10%"> Intervalo </th>';
+                    echo '<th width="10%"> Vídeo </th>';
                     echo '</tr>';
                     while ($row = mysqli_fetch_assoc($result)) {
                         $cod = $row["ID_Treino"];
+                        $url = $row["url"];
                         echo '<tr>';
                         echo '<th width="20%">' . $row["nome"] . '</th>';
-                        echo '<th width="10%">' . $row["series"] . 'x</th>';
-                        echo '<th width="10%">' . $row["repeticoes"] . 'x</th>';
-                        echo '<th width="20%">' . $row["intervalo"] . ' sec</th>';
+                        echo '<th width="5%">' . $row["series"] . 'x</th>';
+                        echo '<th width="5%">' . $row["repeticoes"] . 'x</th>';
+                        echo '<th width="10%">' . $row["intervalo"] . ' sec</th>';
+                        $video = isset($url);
+                        if ($video == false){
+                            echo '<th width="10%"> <p class="nada">Sem vídeo</p> </th>';
+                        } else {
+                            echo '<th width="10%"> <a href='. $url .'> Visualizar </a> </th>';
+                        }
                         echo '</tr>';
                     }
                     echo '</table>';

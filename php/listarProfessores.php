@@ -99,15 +99,11 @@
                 </div>
 
                 <div class="divInputs">
-                    <input id="nome" name="nome" type="text" placeholder="Nome" required>
+                    <input id="nome" name="nome" type="text" placeholder="Nome" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$" title="Nome entre 10 e 100 letras." required>
                 </div>
 
                 <div class="divInputs">
                     <input id="telefone" name="telefone" type="tel" placeholder="Celular" onkeypress="$(this).mask('00000-0000')" required>
-                </div>
-
-                <div class="divInputs">
-                    <input id="senha" name="senha" type="password" placeholder="Senha" required>
                 </div>
 
                 <div class="divButtonModal">

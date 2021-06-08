@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="divInputs">
-                    <input id="Nome" name="Nome" type="text" placeholder="Nome" required>
+                    <input id="Nome" name="Nome" type="text" placeholder="Nome" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$" title="Nome entre 10 e 100 letras." required>
                 </div>
 
                 <div class="divInputs">

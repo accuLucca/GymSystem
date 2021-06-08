@@ -200,8 +200,8 @@ function gerenciaAval() {
 
 }
 
-function gerenciaFluxo() {
-
+function grafico() {
+    window.location.href = '../pages/grafico.html';
 }
 
 function gerenciaAluno() {
@@ -209,9 +209,9 @@ function gerenciaAluno() {
 }
 
 function horaAvalFisica(){
-    window.location.href = 'visualizarHorarioAvalFisica.php';
+    window.location.href = '../php/visualizarHorarioAvalFisica.php';
 }
 
 function horaTreino(){
-    window.location.href = 'visualizarHorarioTreino.php';
+    window.location.href = '../php/visualizarHorarioTreino.php';
 }
